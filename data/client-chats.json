@@ -1,0 +1,118 @@
+[
+  {
+    "id": "chat-1771247740435-o1ds8h",
+    "clientEmail": "client1@gmail.com",
+    "clientName": "Mike Anderson",
+    "startedAt": "2026-02-16T13:15:55.668Z",
+    "lastMessageAt": "2026-02-16T13:16:47.103Z",
+    "messages": [
+      {
+        "role": "user",
+        "content": "who is fit for me,,  i need office admin and Ar work ?",
+        "timestamp": "2026-02-16T13:16:47.103Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Okay, let's find the right fit for your office admin and AR work. To help me narrow down the best candidates, could you tell me a bit more about the role?\n\n*   What will this person handle on a daily basis regarding AR? (e.g., invoice processing, collections, reconciliations)\n*   What skills are absolutely required for the AR portion of the job?\n\nAlso, what monthly budget are you targeting for this role?\n",
+        "timestamp": "2026-02-16T13:16:47.103Z"
+      },
+      {
+        "role": "user",
+        "content": "who is best candidtate for me ?",
+        "timestamp": "2026-02-16T13:16:47.103Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Based on your need for an office admin with AR skills, I would recommend taking a look at **Anudeep Nautiyal**.\n\n*   Experience: Several years in customer support and claims processing.\n*   Core Strengths: Attention to detail, analytical thinking, and problem-solving.\n*   Relevant Industry Experience: Supported a US-based financial process, utilized CRM tools, and managed high ticket volumes.\n*   Availability: Immediate\n\n**Why This Is a Strong Fit For You:**\n\nAnudeep's experience in handling claims and working with financial processes for a U.S. company suggests they have the necessary analytical skills and attention to detail for AR tasks. Their experience with CRM tools is also a plus for managing customer accounts and tracking payments.\n\nWould you like to schedule an interview with Anudeep to discuss their experience further?\n",
+        "timestamp": "2026-02-16T13:16:47.103Z"
+      },
+      {
+        "role": "user",
+        "content": "run the candidates",
+        "timestamp": "2026-02-16T13:16:47.103Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Okay, here are two more candidates who might be a good fit, alongside Anudeep:\n\n**ANUDEEP NAUTIYAL**\n\n*   Experience: Several years in customer support and claims processing.\n*   Core Strengths: Attention to detail, analytical thinking, and problem-solving.\n*   Relevant Industry Experience: Supported a US-based financial process, utilized CRM tools, and managed high ticket volumes.\n*   Availability: Immediate\n*   **Why This Is a Strong Fit For You:** Anudeep's experience in handling claims and working with financial processes for a U.S. company suggests they have the necessary analytical skills and attention to detail for AR tasks. Their experience with CRM tools is also a plus for managing customer accounts and tracking payments.\n\n**GAGAN RANA**\n\n*   Experience: 5+ years in customer relations and tech sales, including a role as Team Lead at Allianz.\n*   Core Strengths: Customer relationship management, marketing, and revenue management.\n*   Relevant Industry Experience: Experience in customer relations, which can translate to effective communication with clients regarding AR matters.\n*   Availability: Immediate\n*   **Why This Is a Strong Fit For You:** Gagan's experience as a team lead and in customer relations suggests strong communication and organizational skills. While not explicitly AR-focused, their background in revenue management and customer interaction could be valuable for managing client accounts and following up on payments.\n\n**MANYA ARORA**\n\n*   Experience: Experienced in handling inbound calls( US Process), resolving customer issues, and maintaining professionalism across service‑focused roles.\n*   Core Strengths: Project Management, Customer Service, Communication\n*   Relevant Industry Experience: Handled complex customer complaints with empathy and effective communication\n*   Availability: Two weeks\n*   **Why This Is a Strong Fit For You:** Manya has experience in handling customer issues, so AR follow-up calls should be straightforward for Manya.\n\nWould you like to schedule interviews with any of these candidates?\n",
+        "timestamp": "2026-02-16T13:16:47.103Z"
+      }
+    ]
+  },
+  {
+    "id": "chat-1771268482740-5kkidw",
+    "clientEmail": "client1@gmail.com",
+    "clientName": "Mike Anderson",
+    "startedAt": "2026-02-16T19:01:32.087Z",
+    "lastMessageAt": "2026-02-16T19:01:59.134Z",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I'm not exactly sure what role I need to fill. Can you help me figure out what kind of support would help my business the most?",
+        "timestamp": "2026-02-16T19:01:59.134Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Of course! Many U.S. restoration companies find it helpful to offload tasks like Xactimate estimating, job costing, AR follow-ups, or CRM management.\n\nTo give you the best recommendation, could you tell me a bit about what tasks are taking up most of your time, or where you feel like you're losing the most money? What's holding you back from growing right now?\n",
+        "timestamp": "2026-02-16T19:01:59.134Z"
+      },
+      {
+        "role": "user",
+        "content": "i need help with AR,  and also estimating",
+        "timestamp": "2026-02-16T19:01:59.134Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Okay, that's a great starting point. So we're looking for someone who can handle both Accounts Receivable follow-up and estimating work.\n\nTo clarify, what percentage of their time would be spent on AR vs. estimating? And on the estimating side, do you need someone who is an Xactimate expert, or are you open to someone with general estimating experience who can learn Xactimate?\n",
+        "timestamp": "2026-02-16T19:01:59.134Z"
+      },
+      {
+        "role": "user",
+        "content": "50 %",
+        "timestamp": "2026-02-16T19:01:59.134Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Okay, so roughly 50/50 split between AR and estimating.\n\nBased on your needs, here are a couple of candidates who might be a good fit:\n\n**Anudeep Nautiyal**\n\n*   Experience: Several years in customer support with a focus on claims processing and customer satisfaction.\n*   Core Strengths: Attention to detail, analytical thinking, and problem-solving.\n*   Relevant Industry Experience: Supported a US-based financial process and has experience with CRM tools.\n*   Communication Style: Experience interacting with international customers.\n*   Timezone Overlap: Readily available during US business hours.\n*   **Why This Is a Strong Fit For You:** Anudeep's experience in claims processing and customer support translates well to AR follow-up. His analytical skills would be beneficial for reviewing invoices and resolving discrepancies.\n\n**Anshul Uppal**\n\n*   Experience: Specializes in construction purchasing, vendor negotiations, and supply chain management.\n*   Core Strengths: Construction purchasing and purchase order management.\n*   Relevant Industry Experience: Procurement & Supply Chain Specialist with strong experience in construction purchasing.\n*   Communication Style: Clear and concise.\n*   Timezone Overlap: Readily available during US business hours.\n*   **Why This Is a Strong Fit For You:** Anshul's experience in construction purchasing is highly relevant to estimating in the restoration industry. While he may need some training on Xactimate specifically, his understanding of construction costs and materials would make him a quick learner.\n\nWould you like to schedule an interview with either Anudeep or Anshul to discuss your AR and estimating needs further?\n",
+        "timestamp": "2026-02-16T19:01:59.134Z"
+      }
+    ]
+  },
+  {
+    "id": "chat-1771268557887-qn12xj",
+    "clientEmail": "client1@gmail.com",
+    "clientName": "Mike Anderson",
+    "startedAt": "2026-02-16T19:02:46.123Z",
+    "lastMessageAt": "2026-02-16T19:02:46.123Z",
+    "messages": [
+      {
+        "role": "user",
+        "content": "tell me more about gagan",
+        "timestamp": "2026-02-16T19:02:46.123Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Okay! To make sure Gagan is a good fit, could you tell me a bit more about what this person will be handling daily? Also, what skills are absolutely essential for the role?\n",
+        "timestamp": "2026-02-16T19:02:46.123Z"
+      }
+    ]
+  },
+  {
+    "id": "chat-1771280454779-1x2m6s",
+    "clientEmail": "client1@gmail.com",
+    "clientName": "Mike Anderson",
+    "startedAt": "2026-02-16T22:21:00.364Z",
+    "lastMessageAt": "2026-02-16T22:21:00.364Z",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I'm looking for a virtual Office Admin for my restoration company. Can you help me find the right person?",
+        "timestamp": "2026-02-16T22:21:00.364Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Absolutely! To help me narrow down the perfect fit, could you tell me a bit more about the role?\n\n*   What will this person handle on a daily basis?\n*   What skills are absolutely required?\n\nFor example, many restoration companies need help with Xactimate estimating, job costing, AR follow-ups, or CRM management.\n",
+        "timestamp": "2026-02-16T22:21:00.364Z"
+      }
+    ]
+  }
+]

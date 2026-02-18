@@ -1,0 +1,44 @@
+[
+  {
+    "id": "user-1",
+    "email": "admin@restoration.com",
+    "name": "Admin User",
+    "role": "admin"
+  },
+  {
+    "id": "user-2",
+    "email": "cs@restoration.com",
+    "name": "Sarah Johnson",
+    "role": "customer_service"
+  },
+  {
+    "id": "user-3",
+    "email": "client1@gmail.com",
+    "name": "Mike Anderson",
+    "role": "client"
+  },
+  {
+    "id": "user-1771197344333",
+    "name": "PHIL ",
+    "email": "pca@puroclean.com",
+    "role": "client"
+  },
+  {
+    "id": "user-1771201683235",
+    "name": "jimmy",
+    "email": "jimmy@gmail.com",
+    "role": "client",
+    "hiringNeeds": "AR,  ",
+    "targetEmployee": "They are almost 2 years old.   make around 1 million a year.  they need help with AR and also estimating.   Company culture per client is family oriented.   ALso teamwork is important to them ",
+    "softwareStack": "xactimate, dash "
+  },
+  {
+    "id": "user-1771268194778",
+    "name": "jyoticlient",
+    "email": "jyoti@restoration.com",
+    "role": "client",
+    "hiringNeeds": "",
+    "targetEmployee": "",
+    "softwareStack": ""
+  }
+]

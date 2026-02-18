@@ -1,0 +1,195 @@
+[
+  {
+    "name": "Gagan Rana",
+    "email": "service@karmastaff.com",
+    "phone": "571-470-0093",
+    "title": "Office Admin",
+    "experience": 10,
+    "skills": [
+      "Customer relationship",
+      "Marketing",
+      "Revenue Management"
+    ],
+    "bio": "A result oriented professional with (5+) Five plus Years of total experience in multi-disciplinary areas requiring diversified skills. Last associated with Allianz as Team Lead in Customer Relations department.\nMajor involvement in all aspects of Customer Relations, Tech Sales. A Professional with proactive attitude, ownership taking, personality, always open for trying and implementing new better / effective ways to minimizing the inputs required for maximum output, flexible, fully operational to seize up demanding\ndeadlines. Possesses strong leadership, excellent communication, planning, people management,\nPresentation and time management skills. Skilled to handle different kinds of work environment with adaptable behavior, personality and nature.",
+    "location": "Noida, India",
+    "availability": "immediate",
+    "joiningDate": "",
+    "resumeUrl": "/uploads/ResumeGAGANRANA-1771029299260-353743430.pdf",
+    "imageUrl": "/uploads/Gagan'sPP-1770985320033-283725498.jpg",
+    "id": "cand-1770985320632",
+    "hobbies": [
+      "PlayStation",
+      "Table Tennis",
+      "Traveling"
+    ],
+    "sortOrder": 0,
+    "rankings": {
+      "personality": 4,
+      "accent": 3,
+      "professionalism": 4,
+      "likeability": 2,
+      "technical": 4
+    }
+  },
+  {
+    "id": "cand-3",
+    "name": "Anudeep Nautiyal",
+    "email": "service@karmastaff.com",
+    "phone": "571-470-0093",
+    "title": "Restoration Office Admin",
+    "experience": 3,
+    "skills": [
+      "Attention to detail",
+      "Analytical thinking",
+      "Problem-solving."
+    ],
+    "bio": "* Delivered customer satisfaction scores consistently above 80 while supporting a US‑based financial process.\n* Promoted to Claims Specialist for exceptional performance in handling complex and high‑priority cases. \n* Reduced customer service resolution time by 30% and claims processing time by 20%. \n* Utilized Quantum software and CRM tools to streamline workflows and improve claims accuracy.\n* Managed high ticket volumes with minimal escalations while collaborating across teams to meet SLAs.",
+    "resumeUrl": "/uploads/Anudeep Resume 1-1770953644776-241894701.pdf",
+    "location": "Dehradun, India",
+    "availability": "immediate",
+    "imageUrl": "/uploads/Anudeep Nautiyal-1770949774102-219428566.png",
+    "sortOrder": 1,
+    "rankings": {
+      "personality": 4,
+      "accent": 3,
+      "professionalism": 5,
+      "likeability": 3,
+      "technical": 4
+    }
+  },
+  {
+    "id": "cand-4",
+    "name": "Elena Rodriguez",
+    "email": "elena.r@example.com",
+    "phone": "555-0123-4567",
+    "title": "Restoration Project Manager",
+    "experience": 7,
+    "skills": [
+      "Xactimate",
+      "Project Management",
+      "Team Leadership"
+    ],
+    "bio": "Experienced Project Manager with a demonstrated history of working in the construction industry. Skilled in Negotiation, Budgeting, Customer Service, Strategic Planning, and Construction Management.",
+    "location": "Miami, FL",
+    "availability": "2 weeks",
+    "joiningDate": "",
+    "resumeUrl": "",
+    "imageUrl": "",
+    "sortOrder": 2,
+    "rankings": {
+      "personality": 5,
+      "accent": 5,
+      "professionalism": 5,
+      "likeability": 5,
+      "technical": 5
+    }
+  },
+  {
+    "id": "cand-5",
+    "name": "Michael Chen",
+    "email": "m.chen@example.com",
+    "phone": "555-9876-5432",
+    "title": "Water Mitigation Tech",
+    "experience": 4,
+    "skills": [
+      "IICRC Certified",
+      "Water Damage Restoration",
+      "Mold Remediation"
+    ],
+    "bio": "Certified Water Restoration Technician involved in residential and commercial projects. Proficient in moisture mapping, extraction, and drying equipment setup.",
+    "location": "Seattle, WA",
+    "availability": "immediate",
+    "joiningDate": "",
+    "resumeUrl": "",
+    "imageUrl": "",
+    "sortOrder": 3,
+    "rankings": {
+      "personality": 4,
+      "accent": 4,
+      "professionalism": 4,
+      "likeability": 4,
+      "technical": 5
+    }
+  },
+  {
+    "id": "cand-6",
+    "name": "Sarah Bloomsy",
+    "email": "s.bloomsy@example.com",
+    "phone": "555-1111-2222",
+    "title": "Contents Specialist",
+    "experience": 5,
+    "skills": [
+      "Inventory Management",
+      "Contents Cleaning",
+      "Pack-out/Pack-back"
+    ],
+    "bio": "Detail-oriented Contents Specialist with 5 years of experience in fire and water damage restoration. Expert in handling delicate items and documenting inventory.",
+    "location": "Austin, TX",
+    "availability": "1 week",
+    "joiningDate": "",
+    "resumeUrl": "",
+    "imageUrl": "",
+    "sortOrder": 4,
+    "rankings": {
+      "personality": 5,
+      "accent": 4,
+      "professionalism": 5,
+      "likeability": 5,
+      "technical": 4
+    }
+  },
+  {
+    "id": "cand-7",
+    "name": "David Kim",
+    "email": "d.kim@example.com",
+    "phone": "555-3333-4444",
+    "title": "Estimator",
+    "experience": 8,
+    "skills": [
+      "Xactimate Level 3",
+      "Symbility",
+      "Claims Handling"
+    ],
+    "bio": "Senior Estimator with extensive experience in residential and commercial loss. Strong background in working with insurance adjusters to reach agreed scopes.",
+    "location": "Chicago, IL",
+    "availability": "immediate",
+    "joiningDate": "",
+    "resumeUrl": "",
+    "imageUrl": "",
+    "sortOrder": 5,
+    "rankings": {
+      "personality": 3,
+      "accent": 4,
+      "professionalism": 5,
+      "likeability": 3,
+      "technical": 5
+    }
+  },
+  {
+    "id": "cand-8",
+    "name": "Jessica Wright",
+    "email": "j.wright@example.com",
+    "phone": "555-5555-6666",
+    "title": "Business Developer",
+    "experience": 6,
+    "skills": [
+      "Sales",
+      "Account Management",
+      "CRM"
+    ],
+    "bio": "Proven track record in generating new business for restoration companies. Focused on building long-term relationships with property managers and insurance agents.",
+    "location": "Denver, CO",
+    "availability": "immediate",
+    "joiningDate": "",
+    "resumeUrl": "",
+    "imageUrl": "",
+    "sortOrder": 6,
+    "rankings": {
+      "personality": 5,
+      "accent": 5,
+      "professionalism": 5,
+      "likeability": 5,
+      "technical": 4
+    }
+  }
+]
