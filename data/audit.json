@@ -1874,5 +1874,60 @@
     "details": {
       "candidateName": "Anudeep Nautiyal"
     }
+  },
+  {
+    "id": "1771531344988-opwleinrc",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-3",
+    "timestamp": "2026-02-19T20:02:24.988Z",
+    "details": {
+      "candidateName": "Anudeep Nautiyal"
+    }
+  },
+  {
+    "id": "1771531374999-c3hjms8uy",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1770985320632",
+    "timestamp": "2026-02-19T20:02:54.999Z",
+    "details": {
+      "candidateName": "Gagan Rana"
+    }
+  },
+  {
+    "id": "1771531410384-rpixrchjk",
+    "userId": "user-1",
+    "action": "update_candidate",
+    "resourceType": "candidate",
+    "resourceId": "cand-1770985320632",
+    "timestamp": "2026-02-19T20:03:30.384Z",
+    "details": {
+      "name": "Gagan Rana"
+    }
+  },
+  {
+    "id": "1771531412137-phzcgx8p3",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1770985320632",
+    "timestamp": "2026-02-19T20:03:32.137Z",
+    "details": {
+      "candidateName": "Gagan Rana"
+    }
+  },
+  {
+    "id": "1771531420506-o66abwilu",
+    "userId": "user-1",
+    "action": "update_candidate",
+    "resourceType": "candidate",
+    "resourceId": "cand-1770985320632",
+    "timestamp": "2026-02-19T20:03:40.506Z",
+    "details": {
+      "name": "Gagan Rana"
+    }
   }
 ]

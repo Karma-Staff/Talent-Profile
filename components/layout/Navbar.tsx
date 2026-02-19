@@ -36,7 +36,6 @@ export function Navbar() {
                             </div>
                             <div className="hidden sm:flex flex-col">
                                 <span className="font-bold text-lg leading-tight">Karma Staff</span>
-                                <span className="text-[10px] text-muted-foreground font-medium">Talent Platform</span>
                             </div>
                         </Link>
 
