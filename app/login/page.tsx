@@ -3,6 +3,7 @@
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Shield } from 'lucide-react';
 
@@ -41,9 +42,9 @@ export default function LoginPage() {
         <div className="min-h-screen flex items-center justify-center p-4">
             <div className="w-full max-w-md">
                 <div className="text-center mb-8">
-                    <div className="inline-flex items-center justify-center w-32 h-32 rounded-2xl bg-white mb-4 overflow-hidden p-4">
+                    <Link href="/dashboard" className="inline-flex items-center justify-center w-32 h-32 rounded-2xl bg-white mb-4 overflow-hidden p-4 hover:opacity-80 transition-opacity">
                         <img src="/karma-staff-logo.png" alt="Karma Staff" className="w-full h-full object-contain" />
-                    </div>
+                    </Link>
                     <h1 className="text-3xl font-bold mb-2 text-white">Karma Staff</h1>
                     <p className="text-muted-foreground">Secure login to access candidate profiles</p>
                 </div>
