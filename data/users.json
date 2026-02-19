@@ -40,5 +40,14 @@
     "hiringNeeds": "",
     "targetEmployee": "",
     "softwareStack": ""
+  },
+  {
+    "id": "user-1771517117874",
+    "name": "anjan",
+    "email": "anjan@karmastaff.com",
+    "role": "client",
+    "hiringNeeds": "HR",
+    "targetEmployee": "HR",
+    "softwareStack": "dash"
   }
 ]

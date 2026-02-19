@@ -55,11 +55,11 @@ export async function POST(request: NextRequest) {
         }
 
         // Load current candidate data
-        const candidates = db.getCandidates();
+        const candidates = await db.getCandidates();
         const candidateContext = `\n\nCurrent Candidate Database (${candidates.length} candidates):\n${JSON.stringify(candidates, null, 2)}`;
 
         // Load client chat conversations for admin intelligence
-        const clientChats = db.getClientChats();
+        const clientChats = await db.getClientChats();
         let clientChatContext = '';
         if (clientChats.length > 0) {
             const chatSummaries = clientChats.map(chat => {
@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
         }
 
         // Load Client Profiles with Questionnaire Data
-        const allUsers = db.getUsers();
+        const allUsers = await db.getUsers();
         const clientUsers = allUsers.filter(u => u.role === 'client');
         let clientProfileContext = '';
         if (clientUsers.length > 0) {

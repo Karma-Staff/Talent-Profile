@@ -1,0 +1,135 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  admin
+  customer_service
+  client
+}
+
+model User {
+  id             String   @id @default(cuid())
+  email          String   @unique
+  name           String
+  role           UserRole @default(client)
+  hiringNeeds    String?
+  targetEmployee String?
+  softwareStack  String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  meetings       Meeting[]   @relation("ClientMeetings")
+  auditLogs      AuditLog[]
+  chats          ClientChatSession[]
+  assignments    ClientAssignment[] @relation("UserAssignments")
+}
+
+model Candidate {
+  id                 String   @id @default(cuid())
+  name               String
+  email              String   @unique
+  phone              String
+  title              String
+  experience         Float
+  skills             String[]
+  bio                String
+  resumeUrl          String?
+  location           String
+  availability       String   // immediate | two_weeks | negotiable | hired | specific_date
+  joiningDate        DateTime?
+  imageUrl           String?
+  hiringCompanyLogo  String?
+  hobbies            String[]
+  sortOrder          Int      @default(0)
+  recordingUrl       String?
+  
+  // Internal Grading stored as JSON
+  rankings           Json?    // { personality: number, accent: number, ... }
+  
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  meetings           Meeting[]
+  assignments        CandidateAssignment[]
+}
+
+model Meeting {
+  id           String   @id @default(cuid())
+  candidateId  String
+  clientId     String
+  scheduledAt  DateTime
+  status       String   // scheduled | completed | cancelled
+  notes        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  meetingType  String   @default("standard")
+  participants String[]
+
+  candidate    Candidate @relation(fields: [candidateId], references: [id])
+  client       User      @relation("ClientMeetings", fields: [clientId], references: [id])
+}
+
+model AuditLog {
+  id           String   @id @default(cuid())
+  userId       String
+  action       String
+  resourceType String   // candidate | meeting | user
+  resourceId   String
+  timestamp    DateTime @default(now())
+  ipAddress    String?
+  details      Json?
+
+  user         User     @relation(fields: [userId], references: [id])
+}
+
+model ClientChatSession {
+  id            String   @id @default(cuid())
+  userId        String?
+  clientEmail   String
+  clientName    String
+  startedAt     DateTime @default(now())
+  lastMessageAt DateTime @default(now())
+  
+  user          User?    @relation(fields: [userId], references: [id])
+  messages      ClientChatMessage[]
+}
+
+model ClientChatMessage {
+  id        String   @id @default(cuid())
+  sessionId String
+  role      String   // user | assistant
+  content   String
+  timestamp DateTime @default(now())
+
+  session   ClientChatSession @relation(fields: [sessionId], references: [id])
+}
+
+model ClientAssignment {
+  id          String   @id @default(cuid())
+  clientId    String   @unique
+  updatedAt   DateTime @default(now())
+  updatedBy   String
+
+  user        User     @relation("UserAssignments", fields: [clientId], references: [id])
+  candidates  CandidateAssignment[]
+}
+
+// Join table for many-to-many relationship between ClientAssignment and Candidate
+model CandidateAssignment {
+  assignmentId String
+  candidateId  String
+  sortOrder    Int
+
+  assignment   ClientAssignment @relation(fields: [assignmentId], references: [id])
+  candidate    Candidate        @relation(fields: [candidateId], references: [id])
+
+  @@id([assignmentId, candidateId])
+}

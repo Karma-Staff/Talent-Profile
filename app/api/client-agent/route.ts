@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
         }
 
         // Load current candidate data and build system prompt
-        const candidates = db.getCandidates();
+        const candidates = await db.getCandidates();
         const systemPrompt = getClientSystemPrompt(candidates);
 
         const genAI = new GoogleGenerativeAI(apiKey);
@@ -98,14 +98,14 @@ export async function POST(request: NextRequest) {
                         };
 
                         // Preserve the original startedAt if session exists
-                        const existing = db.getClientChats().find(c => c.id === sessionId);
+                        const existing = (await db.getClientChats()).find(c => c.id === sessionId);
                         if (existing) {
                             chatSession.startedAt = existing.startedAt;
                         } else {
                             chatSession.startedAt = now;
                         }
 
-                        db.saveClientChat(chatSession);
+                        await db.saveClientChat(chatSession);
                     }
                 } catch (error: any) {
                     controller.enqueue(

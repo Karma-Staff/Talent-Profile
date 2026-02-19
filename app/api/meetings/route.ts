@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const clientId = searchParams.get('clientId');
 
-    let meetings = db.getMeetings();
+    let meetings = await db.getMeetings();
 
     if (clientId) {
         meetings = meetings.filter(m => m.clientId === clientId);
@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
             updatedAt: new Date(),
         };
 
-        db.saveMeeting(newMeeting);
+        await db.saveMeeting(newMeeting);
 
         return NextResponse.json(newMeeting, { status: 201 });
     } catch (error) {

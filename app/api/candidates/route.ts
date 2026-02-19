@@ -3,7 +3,7 @@ import { db } from '@/lib/db';
 import { Candidate } from '@/lib/types';
 
 export async function GET() {
-    const candidates = db.getCandidates();
+    const candidates = await db.getCandidates();
     return NextResponse.json(candidates);
 }
 
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
             skills: body.skills || [],
         };
 
-        db.saveCandidate(newCandidate);
+        await db.saveCandidate(newCandidate);
 
         return NextResponse.json(newCandidate, { status: 201 });
     } catch (error) {
@@ -38,13 +38,13 @@ export async function PUT(request: NextRequest) {
             return NextResponse.json({ error: 'Candidate ID required' }, { status: 400 });
         }
 
-        const existing = db.getCandidateById(body.id);
+        const existing = await db.getCandidateById(body.id);
         if (!existing) {
             return NextResponse.json({ error: 'Candidate not found' }, { status: 404 });
         }
 
         const updatedCandidate = { ...existing, ...body };
-        db.saveCandidate(updatedCandidate);
+        await db.saveCandidate(updatedCandidate);
 
         return NextResponse.json(updatedCandidate);
     } catch (error) {
@@ -61,7 +61,7 @@ export async function DELETE(request: NextRequest) {
             return NextResponse.json({ error: 'Candidate ID required' }, { status: 400 });
         }
 
-        db.deleteCandidate(id);
+        await db.deleteCandidate(id);
         return NextResponse.json({ success: true });
     } catch (error) {
         return NextResponse.json({ error: 'Failed to delete candidate' }, { status: 500 });

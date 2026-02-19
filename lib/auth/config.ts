@@ -16,7 +16,7 @@ export const authOptions: NextAuthOptions = {
                 }
 
                 // In production, verify against a secure database with hashed passwords
-                const user = db.getUserByEmail(credentials.email);
+                const user = await db.getUserByEmail(credentials.email);
 
                 if (user && credentials.password === 'demo123') {
                     return {

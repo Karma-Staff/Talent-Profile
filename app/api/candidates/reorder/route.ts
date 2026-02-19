@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
             sortOrder: index,
         }));
 
-        db.saveCandidates(reorderedCandidates);
+        await db.saveCandidates(reorderedCandidates);
 
         return NextResponse.json({ success: true });
     } catch (error) {

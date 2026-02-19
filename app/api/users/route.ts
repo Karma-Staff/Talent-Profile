@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const role = searchParams.get('role');
 
-    let users = db.getUsers();
+    let users = await db.getUsers();
 
     if (role) {
         users = users.filter(user => user.role === role);
@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
         }
 
         // Check for duplicate email
-        const existing = db.getUserByEmail(email);
+        const existing = await db.getUserByEmail(email);
         if (existing) {
             return NextResponse.json({ error: 'A user with this email already exists' }, { status: 409 });
         }
@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
             ...(role === 'client' ? { hiringNeeds, targetEmployee, softwareStack } : {}),
         };
 
-        db.saveUser(newUser);
+        await db.saveUser(newUser);
         return NextResponse.json(newUser, { status: 201 });
     } catch (error) {
         return NextResponse.json({ error: 'Failed to create user' }, { status: 500 });
@@ -73,7 +73,7 @@ export async function PUT(req: NextRequest) {
             return NextResponse.json({ error: 'User ID is required' }, { status: 400 });
         }
 
-        const existing = db.getUserById(id);
+        const existing = await db.getUserById(id);
         if (!existing) {
             return NextResponse.json({ error: 'User not found' }, { status: 404 });
         }
@@ -92,7 +92,7 @@ export async function PUT(req: NextRequest) {
 
         // Check for email conflict with other users
         if (email && email !== existing.email) {
-            const emailTaken = db.getUserByEmail(email);
+            const emailTaken = await db.getUserByEmail(email);
             if (emailTaken) {
                 return NextResponse.json({ error: 'A user with this email already exists' }, { status: 409 });
             }
@@ -109,9 +109,9 @@ export async function PUT(req: NextRequest) {
                 targetEmployee: targetEmployee !== undefined ? targetEmployee : existing.targetEmployee,
                 softwareStack: softwareStack !== undefined ? softwareStack : existing.softwareStack,
             } : {}),
-        };
+        } as any;
 
-        db.saveUser(updatedUser);
+        await db.saveUser(updatedUser);
         return NextResponse.json(updatedUser);
     } catch (error) {
         return NextResponse.json({ error: 'Failed to update user' }, { status: 500 });
@@ -134,20 +134,20 @@ export async function DELETE(req: NextRequest) {
             return NextResponse.json({ error: 'User ID is required' }, { status: 400 });
         }
 
-        const existing = db.getUserById(id);
+        const existing = await db.getUserById(id);
         if (!existing) {
             return NextResponse.json({ error: 'User not found' }, { status: 404 });
         }
 
         // Prevent deleting the last admin
         if (existing.role === 'admin') {
-            const admins = db.getUsers().filter(u => u.role === 'admin');
+            const admins = (await db.getUsers()).filter(u => u.role === 'admin');
             if (admins.length <= 1) {
                 return NextResponse.json({ error: 'Cannot delete the last admin user' }, { status: 400 });
             }
         }
 
-        db.deleteUser(id);
+        await db.deleteUser(id);
         return NextResponse.json({ success: true });
     } catch (error) {
         return NextResponse.json({ error: 'Failed to delete user' }, { status: 500 });

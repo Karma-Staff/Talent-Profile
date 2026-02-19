@@ -6,11 +6,11 @@ export async function GET(req: NextRequest) {
     const clientId = searchParams.get('clientId');
 
     if (clientId) {
-        const assignment = db.getAssignmentByClient(clientId);
+        const assignment = await db.getAssignmentByClient(clientId);
         return NextResponse.json(assignment || { clientId, candidateIds: [] });
     }
 
-    const assignments = db.getAssignments();
+    const assignments = await db.getAssignments();
     return NextResponse.json(assignments);
 }
 
@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
             updatedBy: updatedBy || 'unknown',
         };
 
-        db.saveAssignment(assignment);
+        await db.saveAssignment(assignment);
         return NextResponse.json(assignment);
     } catch (error) {
         return NextResponse.json({ error: 'Failed to save assignment' }, { status: 500 });

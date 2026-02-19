@@ -1,199 +1,388 @@
-import fs from 'fs';
-import path from 'path';
-import { Candidate, Meeting, ClientChatSession, User, ClientAssignment } from './types';
-import { mockCandidates, mockUsers } from './data';
-
-const DB_PATH = path.join(process.cwd(), 'data', 'candidates.json');
-
-// Ensure data directory exists
-if (!fs.existsSync(path.dirname(DB_PATH))) {
-    fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
-}
-
-// Initialize DB with mock data if it doesn't exist
-if (!fs.existsSync(DB_PATH)) {
-    fs.writeFileSync(DB_PATH, JSON.stringify(mockCandidates, null, 2));
-}
-
-const MEETINGS_PATH = path.join(process.cwd(), 'data', 'meetings.json');
-if (!fs.existsSync(MEETINGS_PATH)) {
-    const { mockMeetings } = require('./data');
-    fs.writeFileSync(MEETINGS_PATH, JSON.stringify(mockMeetings, null, 2));
-}
-
-const CLIENT_CHATS_PATH = path.join(process.cwd(), 'data', 'client-chats.json');
-if (!fs.existsSync(CLIENT_CHATS_PATH)) {
-    fs.writeFileSync(CLIENT_CHATS_PATH, JSON.stringify([], null, 2));
-}
-
-const USERS_PATH = path.join(process.cwd(), 'data', 'users.json');
-if (!fs.existsSync(USERS_PATH)) {
-    fs.writeFileSync(USERS_PATH, JSON.stringify(mockUsers, null, 2));
-}
-
-const ASSIGNMENTS_PATH = path.join(process.cwd(), 'data', 'assignments.json');
-if (!fs.existsSync(ASSIGNMENTS_PATH)) {
-    fs.writeFileSync(ASSIGNMENTS_PATH, JSON.stringify([], null, 2));
-}
+import prisma from './prisma';
+import { Candidate, Meeting, ClientChatSession, User, ClientAssignment, UserRole } from './types';
 
 export const db = {
-    getCandidates: (): Candidate[] => {
+    // Candidate methods
+    getCandidates: async (): Promise<Candidate[]> => {
         try {
-            const data = fs.readFileSync(DB_PATH, 'utf8');
-            const candidates: Candidate[] = JSON.parse(data);
-            return candidates.sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0));
+            const candidates = await prisma.candidate.findMany({
+                orderBy: { sortOrder: 'asc' }
+            });
+            return candidates as unknown as Candidate[];
+        } catch (error) {
+            console.error('Error getting candidates:', error);
+            return [];
+        }
+    },
+
+    getCandidateById: async (id: string): Promise<Candidate | undefined> => {
+        try {
+            const candidate = await prisma.candidate.findUnique({
+                where: { id }
+            });
+            return (candidate as unknown as Candidate) || undefined;
+        } catch (error) {
+            return undefined;
+        }
+    },
+
+    saveCandidate: async (candidate: Candidate): Promise<void> => {
+        try {
+            const exists = await prisma.candidate.findUnique({
+                where: { id: candidate.id }
+            });
+
+            if (exists) {
+                await prisma.candidate.update({
+                    where: { id: candidate.id },
+                    data: {
+                        name: candidate.name,
+                        email: candidate.email,
+                        phone: candidate.phone,
+                        title: candidate.title,
+                        experience: candidate.experience,
+                        skills: candidate.skills,
+                        bio: candidate.bio,
+                        resumeUrl: candidate.resumeUrl,
+                        location: candidate.location,
+                        availability: candidate.availability,
+                        joiningDate: candidate.joiningDate ? new Date(candidate.joiningDate) : null,
+                        imageUrl: candidate.imageUrl,
+                        hiringCompanyLogo: candidate.hiringCompanyLogo,
+                        hobbies: candidate.hobbies,
+                        sortOrder: candidate.sortOrder,
+                        recordingUrl: candidate.recordingUrl,
+                        rankings: candidate.rankings || {},
+                    }
+                });
+            } else {
+                const maxOrder = await prisma.candidate.aggregate({
+                    _max: { sortOrder: true }
+                });
+                const nextOrder = (maxOrder._max.sortOrder ?? -1) + 1;
+
+                await prisma.candidate.create({
+                    data: {
+                        id: candidate.id,
+                        name: candidate.name,
+                        email: candidate.email,
+                        phone: candidate.phone,
+                        title: candidate.title,
+                        experience: candidate.experience,
+                        skills: candidate.skills,
+                        bio: candidate.bio,
+                        resumeUrl: candidate.resumeUrl,
+                        location: candidate.location,
+                        availability: candidate.availability,
+                        joiningDate: candidate.joiningDate ? new Date(candidate.joiningDate) : null,
+                        imageUrl: candidate.imageUrl,
+                        hiringCompanyLogo: candidate.hiringCompanyLogo,
+                        hobbies: candidate.hobbies,
+                        sortOrder: candidate.sortOrder ?? nextOrder,
+                        recordingUrl: candidate.recordingUrl,
+                        rankings: candidate.rankings || {},
+                    }
+                });
+            }
+        } catch (error) {
+            console.error('Error saving candidate:', error);
+        }
+    },
+
+    saveCandidates: async (candidates: Candidate[]): Promise<void> => {
+        // Simple sequential save for now
+        for (const candidate of candidates) {
+            await db.saveCandidate(candidate);
+        }
+    },
+
+    deleteCandidate: async (id: string): Promise<void> => {
+        try {
+            await prisma.candidate.delete({
+                where: { id }
+            });
+        } catch (error) {
+            console.error('Error deleting candidate:', error);
+        }
+    },
+
+    // Meeting methods
+    getMeetings: async (): Promise<Meeting[]> => {
+        try {
+            const meetings = await prisma.meeting.findMany();
+            return meetings as unknown as Meeting[];
         } catch (error) {
             return [];
         }
     },
 
-    getCandidateById: (id: string): Candidate | undefined => {
-        const candidates = db.getCandidates();
-        return candidates.find((c) => c.id === id);
-    },
-
-    saveCandidate: (candidate: Candidate): void => {
-        const candidates = db.getCandidates();
-        const index = candidates.findIndex((c) => c.id === candidate.id);
-
-        if (index >= 0) {
-            candidates[index] = candidate;
-        } else {
-            // New candidate gets the highest sort order
-            const maxOrder = Math.max(...candidates.map((c) => c.sortOrder || 0), -1);
-            candidates.push({ ...candidate, sortOrder: maxOrder + 1 });
-        }
-
-        fs.writeFileSync(DB_PATH, JSON.stringify(candidates, null, 2));
-    },
-
-    saveCandidates: (candidates: Candidate[]): void => {
-        fs.writeFileSync(DB_PATH, JSON.stringify(candidates, null, 2));
-    },
-
-    deleteCandidate: (id: string): void => {
-        const candidates = db.getCandidates();
-        const filtered = candidates.filter((c) => c.id !== id);
-        fs.writeFileSync(DB_PATH, JSON.stringify(filtered, null, 2));
-    },
-
-    getMeetings: (): Meeting[] => {
-        const MEETINGS_PATH = path.join(process.cwd(), 'data', 'meetings.json');
-        if (!fs.existsSync(MEETINGS_PATH)) return [];
+    saveMeeting: async (meeting: Meeting): Promise<void> => {
         try {
-            const data = fs.readFileSync(MEETINGS_PATH, 'utf8');
-            return JSON.parse(data);
+            const exists = await prisma.meeting.findUnique({
+                where: { id: meeting.id }
+            });
+
+            const data = {
+                candidateId: meeting.candidateId,
+                clientId: meeting.clientId,
+                scheduledAt: new Date(meeting.scheduledAt),
+                status: meeting.status,
+                notes: meeting.notes,
+                meetingType: meeting.meetingType || 'standard',
+                participants: meeting.participants || [],
+            };
+
+            if (exists) {
+                await prisma.meeting.update({
+                    where: { id: meeting.id },
+                    data
+                });
+            } else {
+                await prisma.meeting.create({
+                    data: {
+                        id: meeting.id,
+                        ...data
+                    }
+                });
+            }
         } catch (error) {
-            return [];
+            console.error('Error saving meeting:', error);
         }
-    },
-
-    saveMeeting: (meeting: Meeting): void => {
-        const MEETINGS_PATH = path.join(process.cwd(), 'data', 'meetings.json');
-        const meetings = db.getMeetings();
-        const index = meetings.findIndex((m) => m.id === meeting.id);
-
-        if (index >= 0) {
-            meetings[index] = meeting;
-        } else {
-            meetings.push(meeting);
-        }
-
-        fs.writeFileSync(MEETINGS_PATH, JSON.stringify(meetings, null, 2));
     },
 
     // Client Chat methods
-    getClientChats: (): ClientChatSession[] => {
+    getClientChats: async (): Promise<ClientChatSession[]> => {
         try {
-            const data = fs.readFileSync(CLIENT_CHATS_PATH, 'utf8');
-            return JSON.parse(data);
+            const sessions = await prisma.clientChatSession.findMany({
+                include: { messages: true }
+            });
+            return sessions as unknown as ClientChatSession[];
         } catch (error) {
             return [];
         }
     },
 
-    saveClientChat: (session: ClientChatSession): void => {
-        const chats = db.getClientChats();
-        const index = chats.findIndex((c) => c.id === session.id);
+    saveClientChat: async (session: ClientChatSession): Promise<void> => {
+        try {
+            const exists = await prisma.clientChatSession.findUnique({
+                where: { id: session.id }
+            });
 
-        if (index >= 0) {
-            chats[index] = session;
-        } else {
-            chats.push(session);
+            if (exists) {
+                // Update session info and add new messages
+                await prisma.clientChatSession.update({
+                    where: { id: session.id },
+                    data: {
+                        lastMessageAt: new Date(session.lastMessageAt),
+                    }
+                });
+
+                // For messages, we might want to only add new ones or replace. 
+                // Given the existing JSON logic replaced the whole array, we'll do something similar or just append.
+                // Simple approach: delete all and recreated (not ideal for prod but matches existing logic)
+                await prisma.clientChatMessage.deleteMany({
+                    where: { sessionId: session.id }
+                });
+
+                await prisma.clientChatMessage.createMany({
+                    data: session.messages.map((m: any) => ({
+                        sessionId: session.id,
+                        role: m.role,
+                        content: m.content,
+                        timestamp: new Date(m.timestamp)
+                    }))
+                });
+            } else {
+                await prisma.clientChatSession.create({
+                    data: {
+                        id: session.id,
+                        clientEmail: session.clientEmail,
+                        clientName: session.clientName,
+                        startedAt: new Date(session.startedAt),
+                        lastMessageAt: new Date(session.lastMessageAt),
+                        messages: {
+                            create: session.messages.map((m: any) => ({
+                                role: m.role,
+                                content: m.content,
+                                timestamp: new Date(m.timestamp)
+                            }))
+                        }
+                    }
+                });
+            }
+        } catch (error) {
+            console.error('Error saving client chat:', error);
         }
-
-        fs.writeFileSync(CLIENT_CHATS_PATH, JSON.stringify(chats, null, 2));
     },
 
-    getClientChatsByEmail: (email: string): ClientChatSession[] => {
-        const chats = db.getClientChats();
-        return chats.filter((c) => c.clientEmail === email);
+    getClientChatsByEmail: async (email: string): Promise<ClientChatSession[]> => {
+        try {
+            const sessions = await prisma.clientChatSession.findMany({
+                where: { clientEmail: email },
+                include: { messages: true }
+            });
+            return sessions as unknown as ClientChatSession[];
+        } catch (error) {
+            return [];
+        }
     },
 
     // User methods
-    getUsers: (): User[] => {
+    getUsers: async (): Promise<User[]> => {
         try {
-            const data = fs.readFileSync(USERS_PATH, 'utf8');
-            return JSON.parse(data);
+            const users = await prisma.user.findMany();
+            return users as unknown as User[];
         } catch (error) {
             return [];
         }
     },
 
-    getUserById: (id: string): User | undefined => {
-        const users = db.getUsers();
-        return users.find((u) => u.id === id);
-    },
-
-    getUserByEmail: (email: string): User | undefined => {
-        const users = db.getUsers();
-        return users.find((u) => u.email === email);
-    },
-
-    saveUser: (user: User): void => {
-        const users = db.getUsers();
-        const index = users.findIndex((u) => u.id === user.id);
-
-        if (index >= 0) {
-            users[index] = user;
-        } else {
-            users.push(user);
+    getUserById: async (id: string): Promise<User | undefined> => {
+        try {
+            const user = await prisma.user.findUnique({
+                where: { id }
+            });
+            return (user as unknown as User) || undefined;
+        } catch (error) {
+            return undefined;
         }
-
-        fs.writeFileSync(USERS_PATH, JSON.stringify(users, null, 2));
     },
 
-    deleteUser: (id: string): void => {
-        const users = db.getUsers();
-        const filtered = users.filter((u) => u.id !== id);
-        fs.writeFileSync(USERS_PATH, JSON.stringify(filtered, null, 2));
+    getUserByEmail: async (email: string): Promise<User | undefined> => {
+        try {
+            const user = await prisma.user.findUnique({
+                where: { email }
+            });
+            return (user as unknown as User) || undefined;
+        } catch (error) {
+            return undefined;
+        }
+    },
+
+    saveUser: async (user: User): Promise<void> => {
+        try {
+            const exists = await prisma.user.findUnique({
+                where: { id: user.id }
+            });
+
+            const data = {
+                email: user.email,
+                name: user.name,
+                role: user.role as UserRole,
+                hiringNeeds: user.hiringNeeds,
+                targetEmployee: user.targetEmployee,
+                softwareStack: user.softwareStack,
+            };
+
+            if (exists) {
+                await prisma.user.update({
+                    where: { id: user.id },
+                    data
+                });
+            } else {
+                await prisma.user.create({
+                    data: {
+                        id: user.id,
+                        ...data
+                    }
+                });
+            }
+        } catch (error) {
+            console.error('Error saving user:', error);
+        }
+    },
+
+    deleteUser: async (id: string): Promise<void> => {
+        try {
+            await prisma.user.delete({
+                where: { id }
+            });
+        } catch (error) {
+            console.error('Error deleting user:', error);
+        }
     },
 
     // Assignment methods
-    getAssignments: (): ClientAssignment[] => {
+    getAssignments: async (): Promise<ClientAssignment[]> => {
         try {
-            const data = fs.readFileSync(ASSIGNMENTS_PATH, 'utf8');
-            return JSON.parse(data);
+            const assignments = await prisma.clientAssignment.findMany({
+                include: { candidates: { orderBy: { sortOrder: 'asc' } } }
+            });
+            return assignments.map((a: any) => ({
+                clientId: a.clientId,
+                candidateIds: a.candidates.map((c: any) => c.candidateId),
+                updatedAt: a.updatedAt.toISOString(),
+                updatedBy: a.updatedBy
+            }));
         } catch (error) {
             return [];
         }
     },
 
-    getAssignmentByClient: (clientId: string): ClientAssignment | undefined => {
-        const assignments = db.getAssignments();
-        return assignments.find((a) => a.clientId === clientId);
+    getAssignmentByClient: async (clientId: string): Promise<ClientAssignment | undefined> => {
+        try {
+            const assignment = await prisma.clientAssignment.findUnique({
+                where: { clientId },
+                include: { candidates: { orderBy: { sortOrder: 'asc' } } }
+            });
+            if (!assignment) return undefined;
+            return {
+                clientId: assignment.clientId,
+                candidateIds: assignment.candidates.map((c: any) => c.candidateId),
+                updatedAt: assignment.updatedAt.toISOString(),
+                updatedBy: assignment.updatedBy
+            };
+        } catch (error) {
+            return undefined;
+        }
     },
 
-    saveAssignment: (assignment: ClientAssignment): void => {
-        const assignments = db.getAssignments();
-        const index = assignments.findIndex((a) => a.clientId === assignment.clientId);
+    saveAssignment: async (assignment: ClientAssignment): Promise<void> => {
+        try {
+            const exists = await prisma.clientAssignment.findUnique({
+                where: { clientId: assignment.clientId }
+            });
 
-        if (index >= 0) {
-            assignments[index] = assignment;
-        } else {
-            assignments.push(assignment);
+            if (exists) {
+                await prisma.clientAssignment.update({
+                    where: { clientId: assignment.clientId },
+                    data: {
+                        updatedAt: new Date(assignment.updatedAt),
+                        updatedBy: assignment.updatedBy,
+                    }
+                });
+
+                // Update candidate associations
+                await prisma.candidateAssignment.deleteMany({
+                    where: { assignmentId: exists.id }
+                });
+
+                await prisma.candidateAssignment.createMany({
+                    data: assignment.candidateIds.map((id, index) => ({
+                        assignmentId: exists.id,
+                        candidateId: id,
+                        sortOrder: index
+                    }))
+                });
+            } else {
+                const newAssignment = await prisma.clientAssignment.create({
+                    data: {
+                        clientId: assignment.clientId,
+                        updatedAt: new Date(assignment.updatedAt),
+                        updatedBy: assignment.updatedBy,
+                    }
+                });
+
+                await prisma.candidateAssignment.createMany({
+                    data: assignment.candidateIds.map((id, index) => ({
+                        assignmentId: newAssignment.id,
+                        candidateId: id,
+                        sortOrder: index
+                    }))
+                });
+            }
+        } catch (error) {
+            console.error('Error saving assignment:', error);
         }
-
-        fs.writeFileSync(ASSIGNMENTS_PATH, JSON.stringify(assignments, null, 2));
     },
 };
