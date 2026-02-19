@@ -1,5 +1,31 @@
 [
   {
+    "id": "cand-3",
+    "name": "Anudeep Nautiyal",
+    "email": "service@karmastaff.com",
+    "phone": "571-470-0093",
+    "title": "Restoration Office Admin",
+    "experience": 3,
+    "skills": [
+      "Attention to detail",
+      "Analytical thinking",
+      "Problem-solving."
+    ],
+    "bio": "* Delivered customer satisfaction scores consistently above 80 while supporting a US‑based financial process.\n* Promoted to Claims Specialist for exceptional performance in handling complex and high‑priority cases. \n* Reduced customer service resolution time by 30% and claims processing time by 20%. \n* Utilized Quantum software and CRM tools to streamline workflows and improve claims accuracy.\n* Managed high ticket volumes with minimal escalations while collaborating across teams to meet SLAs.",
+    "resumeUrl": "/uploads/Anudeep Resume 1-1770953644776-241894701.pdf",
+    "location": "Dehradun, India",
+    "availability": "immediate",
+    "imageUrl": "/uploads/Anudeep Nautiyal-1770949774102-219428566.png",
+    "sortOrder": 0,
+    "rankings": {
+      "personality": 4,
+      "accent": 3,
+      "professionalism": 5,
+      "likeability": 3,
+      "technical": 4
+    }
+  },
+  {
     "name": "Gagan Rana",
     "email": "service@karmastaff.com",
     "phone": "571-470-0093",
@@ -22,7 +48,7 @@
       "Table Tennis",
       "Traveling"
     ],
-    "sortOrder": 0,
+    "sortOrder": 1,
     "rankings": {
       "personality": 4,
       "accent": 3,
@@ -32,164 +58,92 @@
     }
   },
   {
-    "id": "cand-3",
-    "name": "Anudeep Nautiyal",
+    "name": "Manya Arora",
     "email": "service@karmastaff.com",
     "phone": "571-470-0093",
-    "title": "Restoration Office Admin",
+    "title": "Admin",
     "experience": 3,
     "skills": [
-      "Attention to detail",
-      "Analytical thinking",
-      "Problem-solving."
+      "Comm"
     ],
-    "bio": "* Delivered customer satisfaction scores consistently above 80 while supporting a US‑based financial process.\n* Promoted to Claims Specialist for exceptional performance in handling complex and high‑priority cases. \n* Reduced customer service resolution time by 30% and claims processing time by 20%. \n* Utilized Quantum software and CRM tools to streamline workflows and improve claims accuracy.\n* Managed high ticket volumes with minimal escalations while collaborating across teams to meet SLAs.",
-    "resumeUrl": "/uploads/Anudeep Resume 1-1770953644776-241894701.pdf",
+    "bio": "Experienced in handling inbound calls( US Process), resolving customer issues, and maintaining professionalism across service‑focused roles.\nStrong ability to manage complex customer complaints with empathy and effective communication.\nConsistently participates in training and team meetings to enhance knowledge and performance. \nEquipped with strong communication, problem‑solving, project management, and computer literacy skills.\nWon multiple awards for customer service.",
     "location": "Dehradun, India",
     "availability": "immediate",
-    "imageUrl": "/uploads/Anudeep Nautiyal-1770949774102-219428566.png",
-    "sortOrder": 1,
-    "rankings": {
-      "personality": 4,
-      "accent": 3,
-      "professionalism": 5,
-      "likeability": 3,
-      "technical": 4
-    }
-  },
-  {
-    "id": "cand-4",
-    "name": "Elena Rodriguez",
-    "email": "elena.r@example.com",
-    "phone": "555-0123-4567",
-    "title": "Restoration Project Manager",
-    "experience": 7,
-    "skills": [
-      "Xactimate",
-      "Project Management",
-      "Team Leadership"
-    ],
-    "bio": "Experienced Project Manager with a demonstrated history of working in the construction industry. Skilled in Negotiation, Budgeting, Customer Service, Strategic Planning, and Construction Management.",
-    "location": "Miami, FL",
-    "availability": "2 weeks",
     "joiningDate": "",
-    "resumeUrl": "",
-    "imageUrl": "",
-    "sortOrder": 2,
-    "rankings": {
-      "personality": 5,
-      "accent": 5,
-      "professionalism": 5,
-      "likeability": 5,
-      "technical": 5
-    }
-  },
-  {
-    "id": "cand-5",
-    "name": "Michael Chen",
-    "email": "m.chen@example.com",
-    "phone": "555-9876-5432",
-    "title": "Water Mitigation Tech",
-    "experience": 4,
-    "skills": [
-      "IICRC Certified",
-      "Water Damage Restoration",
-      "Mold Remediation"
-    ],
-    "bio": "Certified Water Restoration Technician involved in residential and commercial projects. Proficient in moisture mapping, extraction, and drying equipment setup.",
-    "location": "Seattle, WA",
-    "availability": "immediate",
-    "joiningDate": "",
-    "resumeUrl": "",
-    "imageUrl": "",
-    "sortOrder": 3,
+    "resumeUrl": "/uploads/Manya Resume 1-1771505342987-480104506.pdf",
+    "hiringCompanyLogo": "",
+    "hobbies": [],
+    "imageUrl": "/uploads/Manya Arora-1771505342946-75460678.jpeg",
+    "recordingUrl": "/uploads/Manya video-1771505343054-593786471.mp4",
+    "id": "cand-1771505343600",
+    "sortOrder": 7,
     "rankings": {
       "personality": 4,
       "accent": 4,
       "professionalism": 4,
-      "likeability": 4,
-      "technical": 5
+      "technical": 4,
+      "likeability": 5
     }
   },
   {
-    "id": "cand-6",
-    "name": "Sarah Bloomsy",
-    "email": "s.bloomsy@example.com",
-    "phone": "555-1111-2222",
-    "title": "Contents Specialist",
-    "experience": 5,
-    "skills": [
-      "Inventory Management",
-      "Contents Cleaning",
-      "Pack-out/Pack-back"
-    ],
-    "bio": "Detail-oriented Contents Specialist with 5 years of experience in fire and water damage restoration. Expert in handling delicate items and documenting inventory.",
-    "location": "Austin, TX",
-    "availability": "1 week",
+    "name": "Aman Vijetra",
+    "email": "service@karmastaff.com",
+    "phone": "571-470-0093",
+    "title": "Admin",
+    "experience": 0,
+    "skills": [],
+    "bio": "Handles international customer interactions professionally through voice support at I Energizer (US Based process).\nEfficiently resolves customer queries while ensuring high quality standards and process adherence.\nMaintains strong customer satisfaction using effective communication and problem‑solving skills. \nPreviously supported Zomato customers by resolving order‑related issues and ensuring positive experiences.\nBrings core strengths in customer service, time management, teamwork, and basic computer proficiency.",
+    "location": "Dehradun, India",
+    "availability": "immediate",
     "joiningDate": "",
-    "resumeUrl": "",
-    "imageUrl": "",
-    "sortOrder": 4,
+    "resumeUrl": "/uploads/Aman Resume 1-1771505472899-626895746.pdf",
+    "hiringCompanyLogo": "",
+    "hobbies": [],
+    "imageUrl": "/uploads/Aman Vijetra-1771505472866-260769084.jpeg",
+    "id": "cand-1771505472931",
+    "sortOrder": 8
+  },
+  {
+    "name": "Anshul Uppal",
+    "email": "service@karmastaff.com",
+    "phone": "571-470-0093",
+    "title": "Admin",
+    "experience": 0,
+    "skills": [],
+    "bio": "Procurement & Supply Chain Specialist with strong experience in construction purchasing, vendor\nnegotiations, inventory forecasting, and hospital supply operations. Managed $2M+ procurement projects at\nCaivan, optimized medical supply chain at The Ottawa Hospital, and supervised high-volume retail operations\nat Shoppers Drug Mart. Skilled in SAP, Oracle, AS400, Newstar, RFQs/RFPs, PO management, vendor\nperformance, cost optimization, and multi-site logistics.",
+    "location": "Noida, India",
+    "availability": "immediate",
+    "joiningDate": "",
+    "hiringCompanyLogo": "",
+    "hobbies": [],
+    "imageUrl": "/uploads/Anshul'sPP-1771505800591-323252188.jpg",
+    "recordingUrl": "/uploads/Anshul'sIntro_Final-1771505800695-794426896.mp4",
+    "id": "cand-1771505800747",
+    "sortOrder": 9,
     "rankings": {
       "personality": 5,
       "accent": 4,
-      "professionalism": 5,
-      "likeability": 5,
-      "technical": 4
+      "professionalism": 4,
+      "technical": 3,
+      "likeability": 5
     }
   },
   {
-    "id": "cand-7",
-    "name": "David Kim",
-    "email": "d.kim@example.com",
-    "phone": "555-3333-4444",
-    "title": "Estimator",
-    "experience": 8,
-    "skills": [
-      "Xactimate Level 3",
-      "Symbility",
-      "Claims Handling"
-    ],
-    "bio": "Senior Estimator with extensive experience in residential and commercial loss. Strong background in working with insurance adjusters to reach agreed scopes.",
-    "location": "Chicago, IL",
-    "availability": "immediate",
+    "name": "Pulkit Parvinda",
+    "email": "service@karmastaff.com",
+    "phone": "571-470-0093",
+    "title": "Admin",
+    "experience": 4,
+    "skills": [],
+    "bio": " Estimating software: proficient in Xactimate - sketching floor plans, applying line items, and generating detailed estimates.\n CRM & job management: experienced with dash - scheduling jobs, managing documentation, tracking job progress, and coordinating with field teams.\n Gained exposure to insurance claim processes and restoration compliance standards.\n Restoration industry knowledge: in-depth understanding of restoration job types and workflows including:\n1. Water mitigation\n2. Fire damage restoration\n3. Mold remediation\n4. Contents cleaning and inventory",
+    "location": "Dehradun, India",
+    "availability": "two_weeks",
     "joiningDate": "",
-    "resumeUrl": "",
-    "imageUrl": "",
-    "sortOrder": 5,
-    "rankings": {
-      "personality": 3,
-      "accent": 4,
-      "professionalism": 5,
-      "likeability": 3,
-      "technical": 5
-    }
-  },
-  {
-    "id": "cand-8",
-    "name": "Jessica Wright",
-    "email": "j.wright@example.com",
-    "phone": "555-5555-6666",
-    "title": "Business Developer",
-    "experience": 6,
-    "skills": [
-      "Sales",
-      "Account Management",
-      "CRM"
-    ],
-    "bio": "Proven track record in generating new business for restoration companies. Focused on building long-term relationships with property managers and insurance agents.",
-    "location": "Denver, CO",
-    "availability": "immediate",
-    "joiningDate": "",
-    "resumeUrl": "",
-    "imageUrl": "",
-    "sortOrder": 6,
-    "rankings": {
-      "personality": 5,
-      "accent": 5,
-      "professionalism": 5,
-      "likeability": 5,
-      "technical": 4
-    }
+    "resumeUrl": "/uploads/Pulkit Resume-1771505931767-991779960.pdf",
+    "hiringCompanyLogo": "",
+    "hobbies": [],
+    "imageUrl": "/uploads/Pulkit-1771505931736-843690631.jpeg",
+    "id": "cand-1771505931794",
+    "sortOrder": 10
   }
 ]

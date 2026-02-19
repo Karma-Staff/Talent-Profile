@@ -1435,5 +1435,243 @@
     "details": {
       "candidateName": "Anudeep Nautiyal"
     }
+  },
+  {
+    "id": "1771449857684-lldc11wht",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-3",
+    "timestamp": "2026-02-18T21:24:17.684Z",
+    "details": {
+      "candidateName": "Anudeep Nautiyal"
+    }
+  },
+  {
+    "id": "1771451242702-w0zbokc6z",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1770985320632",
+    "timestamp": "2026-02-18T21:47:22.702Z",
+    "details": {
+      "candidateName": "Gagan Rana"
+    }
+  },
+  {
+    "id": "1771451304398-x2r5lrwyl",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1770985320632",
+    "timestamp": "2026-02-18T21:48:24.398Z",
+    "details": {
+      "candidateName": "Gagan Rana"
+    }
+  },
+  {
+    "id": "1771451342211-zwrk0hhnk",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-3",
+    "timestamp": "2026-02-18T21:49:02.211Z",
+    "details": {
+      "candidateName": "Anudeep Nautiyal"
+    }
+  },
+  {
+    "id": "1771504990504-6d3p53nw1",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-7",
+    "timestamp": "2026-02-19T12:43:10.504Z",
+    "details": {
+      "candidateName": "David Kim"
+    }
+  },
+  {
+    "id": "1771504992464-tklqt9h6y",
+    "userId": "user-1",
+    "action": "delete_candidate",
+    "resourceType": "candidate",
+    "resourceId": "cand-7",
+    "timestamp": "2026-02-19T12:43:12.464Z",
+    "details": {
+      "candidateName": "David Kim"
+    }
+  },
+  {
+    "id": "1771505344274-0l0yal3ck",
+    "userId": "user-1",
+    "action": "create_candidate",
+    "resourceType": "candidate",
+    "timestamp": "2026-02-19T12:49:04.274Z",
+    "details": {
+      "name": "Manya Arora"
+    }
+  },
+  {
+    "id": "1771505353395-48tu3oeae",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-5",
+    "timestamp": "2026-02-19T12:49:13.395Z",
+    "details": {
+      "candidateName": "Michael Chen"
+    }
+  },
+  {
+    "id": "1771505355751-u4r5ncl25",
+    "userId": "user-1",
+    "action": "delete_candidate",
+    "resourceType": "candidate",
+    "resourceId": "cand-5",
+    "timestamp": "2026-02-19T12:49:15.751Z",
+    "details": {
+      "candidateName": "Michael Chen"
+    }
+  },
+  {
+    "id": "1771505358236-6r0a06zpe",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-4",
+    "timestamp": "2026-02-19T12:49:18.236Z",
+    "details": {
+      "candidateName": "Elena Rodriguez"
+    }
+  },
+  {
+    "id": "1771505360615-b1pkvk68l",
+    "userId": "user-1",
+    "action": "delete_candidate",
+    "resourceType": "candidate",
+    "resourceId": "cand-4",
+    "timestamp": "2026-02-19T12:49:20.615Z",
+    "details": {
+      "candidateName": "Elena Rodriguez"
+    }
+  },
+  {
+    "id": "1771505363233-o34a24udn",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-6",
+    "timestamp": "2026-02-19T12:49:23.233Z",
+    "details": {
+      "candidateName": "Sarah Bloomsy"
+    }
+  },
+  {
+    "id": "1771505365043-aaodkbiq2",
+    "userId": "user-1",
+    "action": "delete_candidate",
+    "resourceType": "candidate",
+    "resourceId": "cand-6",
+    "timestamp": "2026-02-19T12:49:25.043Z",
+    "details": {
+      "candidateName": "Sarah Bloomsy"
+    }
+  },
+  {
+    "id": "1771505473003-jskdnx37s",
+    "userId": "user-1",
+    "action": "create_candidate",
+    "resourceType": "candidate",
+    "timestamp": "2026-02-19T12:51:13.003Z",
+    "details": {
+      "name": "Aman Vijetra"
+    }
+  },
+  {
+    "id": "1771505476482-04yyi17xb",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-8",
+    "timestamp": "2026-02-19T12:51:16.482Z",
+    "details": {
+      "candidateName": "Jessica Wright"
+    }
+  },
+  {
+    "id": "1771505479131-yzoz0rq1p",
+    "userId": "user-1",
+    "action": "delete_candidate",
+    "resourceType": "candidate",
+    "resourceId": "cand-8",
+    "timestamp": "2026-02-19T12:51:19.131Z",
+    "details": {
+      "candidateName": "Jessica Wright"
+    }
+  },
+  {
+    "id": "1771505482361-acmnmdqpx",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771505343600",
+    "timestamp": "2026-02-19T12:51:22.361Z",
+    "details": {
+      "candidateName": "Manya Arora"
+    }
+  },
+  {
+    "id": "1771505800836-9bwdkcnwh",
+    "userId": "user-1",
+    "action": "create_candidate",
+    "resourceType": "candidate",
+    "timestamp": "2026-02-19T12:56:40.836Z",
+    "details": {
+      "name": "Anshul Uppal"
+    }
+  },
+  {
+    "id": "1771505931865-fh1mauxwl",
+    "userId": "user-1",
+    "action": "create_candidate",
+    "resourceType": "candidate",
+    "timestamp": "2026-02-19T12:58:51.865Z",
+    "details": {
+      "name": "Pulkit Parvinda"
+    }
+  },
+  {
+    "id": "1771505936118-q0ht6sao0",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771505800747",
+    "timestamp": "2026-02-19T12:58:56.118Z",
+    "details": {
+      "candidateName": "Anshul Uppal"
+    }
+  },
+  {
+    "id": "1771505940526-0gso092jr",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771505800747",
+    "timestamp": "2026-02-19T12:59:00.526Z",
+    "details": {
+      "candidateName": "Anshul Uppal"
+    }
+  },
+  {
+    "id": "1771511732611-v4vn7x981",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771505800747",
+    "timestamp": "2026-02-19T14:35:32.611Z",
+    "details": {
+      "candidateName": "Anshul Uppal"
+    }
   }
 ]

@@ -234,25 +234,7 @@ export function CandidateForm({ initialData, mode }: CandidateFormProps) {
     };
 
     // Section wrapper component for consistent styling
-    const FormSection = ({ icon: Icon, title, description, children }: {
-        icon: React.ElementType;
-        title: string;
-        description?: string;
-        children: React.ReactNode;
-    }) => (
-        <div className="bg-card/40 backdrop-blur-sm border border-border/50 rounded-xl p-6 space-y-5 transition-all duration-200 hover:border-border/70">
-            <div className="flex items-center gap-3 pb-3 border-b border-border/30">
-                <div className="p-2 rounded-lg bg-primary/10">
-                    <Icon className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                    <h3 className="text-lg font-semibold">{title}</h3>
-                    {description && <p className="text-sm text-muted-foreground mt-0.5">{description}</p>}
-                </div>
-            </div>
-            {children}
-        </div>
-    );
+
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl mx-auto pb-8">
@@ -625,3 +607,24 @@ export function CandidateForm({ initialData, mode }: CandidateFormProps) {
         </form>
     );
 }
+
+// Section wrapper component for consistent styling
+const FormSection = ({ icon: Icon, title, description, children }: {
+    icon: React.ElementType;
+    title: string;
+    description?: string;
+    children: React.ReactNode;
+}) => (
+    <div className="bg-card/40 backdrop-blur-sm border border-border/50 rounded-xl p-6 space-y-5 transition-all duration-200 hover:border-border/70">
+        <div className="flex items-center gap-3 pb-3 border-b border-border/30">
+            <div className="p-2 rounded-lg bg-primary/10">
+                <Icon className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+                <h3 className="text-lg font-semibold">{title}</h3>
+                {description && <p className="text-sm text-muted-foreground mt-0.5">{description}</p>}
+            </div>
+        </div>
+        {children}
+    </div>
+);
