@@ -30,15 +30,15 @@ export function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center space-x-8">
-                        <a href="https://www.karmastaff.com" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+                        <Link href="/dashboard" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
                             <div className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center bg-white">
                                 <img src="/karma-staff-logo.png" alt="Karma Staff" className="w-full h-full object-contain p-1" />
                             </div>
                             <div className="hidden sm:flex flex-col">
                                 <span className="font-bold text-lg leading-tight">Karma Staff</span>
-                                <span className="text-[10px] text-muted-foreground font-medium">www.karmastaff.com</span>
+                                <span className="text-[10px] text-muted-foreground font-medium">Talent Platform</span>
                             </div>
-                        </a>
+                        </Link>
 
                         <div className="hidden md:flex space-x-1">
                             {visibleNav.map((item) => {
