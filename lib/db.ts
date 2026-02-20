@@ -256,11 +256,31 @@ export const db = {
 
     deleteCandidate: async (id: string): Promise<void> => {
         try {
+            // 1. Delete dependent records first to avoid foreign key constraints
+            await prisma.meeting.deleteMany({ where: { candidateId: id } });
+
+            // 2. Handle Assignments
+            // Cascade through junctions
+            await prisma.candidateAssignment.deleteMany({ where: { candidateId: id } });
+
+            // 3. Finally delete the candidate from DB
             await prisma.candidate.delete({
                 where: { id }
             });
         } catch (error) {
-            console.error('Error deleting candidate:', error);
+            console.error('Error deleting candidate from DB:', error);
+        }
+
+        // 4. Remove from persistent data
+        try {
+            const data = await getPersistentData();
+            const filtered = data.candidates.filter(c => c.id !== id);
+            if (filtered.length !== data.candidates.length) {
+                data.candidates = filtered;
+                await savePersistentData(data);
+            }
+        } catch (pError) {
+            console.error('File persistence delete failed:', pError);
         }
     },
 
@@ -581,11 +601,42 @@ export const db = {
 
     deleteUser: async (id: string): Promise<void> => {
         try {
+            // 1. Delete dependent records first to avoid foreign key constraints
+            await prisma.meeting.deleteMany({ where: { clientId: id } });
+            await prisma.auditLog.deleteMany({ where: { userId: id } });
+
+            // 2. Handle Chat sessions (cascading messages if necessary)
+            const sessions = await prisma.clientChatSession.findMany({ where: { userId: id } });
+            for (const session of sessions) {
+                await prisma.clientChatMessage.deleteMany({ where: { sessionId: session.id } });
+            }
+            await prisma.clientChatSession.deleteMany({ where: { userId: id } });
+
+            // 3. Handle Assignments
+            const assignments = await prisma.clientAssignment.findMany({ where: { clientId: id } });
+            for (const assignment of assignments) {
+                await prisma.candidateAssignment.deleteMany({ where: { assignmentId: assignment.id } });
+            }
+            await prisma.clientAssignment.deleteMany({ where: { clientId: id } });
+
+            // 4. Finally delete the user from DB
             await prisma.user.delete({
                 where: { id }
             });
         } catch (error) {
-            console.error('Error deleting user:', error);
+            console.error('Error deleting user from DB:', error);
+        }
+
+        // 5. Remove from persistent data
+        try {
+            const data = await getPersistentData();
+            const filtered = data.users.filter(u => u.id !== id);
+            if (filtered.length !== data.users.length) {
+                data.users = filtered;
+                await savePersistentData(data);
+            }
+        } catch (pError) {
+            console.error('File persistence delete failed:', pError);
         }
     },
 
