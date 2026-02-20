@@ -6,7 +6,7 @@ import { WelcomeOverlay } from '@/components/ui/WelcomeOverlay';
 
 import { useSession } from 'next-auth/react';
 import { Button } from '@/components/ui/Button';
-import { Plus, PartyPopper } from 'lucide-react';
+import { Plus, PartyPopper, UserPlus } from 'lucide-react';
 import { canManageCandidates } from '@/lib/rbac';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -35,8 +35,8 @@ export default function DashboardPage() {
                         .filter(Boolean);
                     setCandidates(ordered);
                 } else {
-                    // No assignments yet — show all candidates
-                    setCandidates(allCandidates);
+                    // No assignments yet — show empty list (only assigned candidates are visible)
+                    setCandidates([]);
                 }
             }).catch(err => console.error(err));
         } else {
@@ -115,7 +115,19 @@ export default function DashboardPage() {
                     </div>
                 </div>
 
-                <CandidateGrid candidates={candidates} userRole={user?.role} />
+                {isClient && candidates.length === 0 ? (
+                    <div className="text-center py-16">
+                        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-6">
+                            <UserPlus className="w-10 h-10 text-primary/60" />
+                        </div>
+                        <h2 className="text-2xl font-semibold mb-3">No Candidates Assigned Yet</h2>
+                        <p className="text-muted-foreground max-w-md mx-auto">
+                            Your account manager will assign candidates tailored to your needs. Please check back soon or contact your account manager.
+                        </p>
+                    </div>
+                ) : (
+                    <CandidateGrid candidates={candidates} userRole={user?.role} />
+                )}
             </div>
         </DashboardLayout>
     );

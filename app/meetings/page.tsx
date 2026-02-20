@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react';
 import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Calendar, Clock, User } from 'lucide-react';
+import { Calendar, Clock, User, Trash2 } from 'lucide-react';
 import { format } from 'date-fns';
 
 export default function MeetingsPage() {
@@ -45,6 +45,17 @@ export default function MeetingsPage() {
     const getCandidate = (id: string) => candidates.find(c => c.id === id);
     const getStaffName = (id: string) => allStaff.find(s => s.id === id)?.name || id;
 
+
+    const handleDelete = async (meetingId: string) => {
+        if (!confirm('Are you sure you want to delete this meeting?')) return;
+        try {
+            await fetch(`/api/meetings?id=${meetingId}`, { method: 'DELETE' });
+            setUserMeetings(prev => prev.filter(m => m.id !== meetingId));
+        } catch (err) {
+            console.error('Failed to delete meeting:', err);
+        }
+    };
+
     const statusColors: Record<string, 'success' | 'warning' | 'info'> = {
         scheduled: 'info',
         completed: 'success',
@@ -79,7 +90,7 @@ export default function MeetingsPage() {
 
                             return (
                                 <Card key={meeting.id} hover={false} className="border-l-4 border-l-primary">
-                                    <div className="flex items-start justify-between">
+                                    <div className="flex items-start justify-between gap-4">
                                         <div className="flex-1">
                                             <div className="flex items-center gap-3 mb-1">
                                                 <h3 className="text-xl font-bold">{candidate.name}</h3>
@@ -127,6 +138,13 @@ export default function MeetingsPage() {
                                                 </div>
                                             )}
                                         </div>
+                                        <button
+                                            onClick={() => handleDelete(meeting.id)}
+                                            className="flex-shrink-0 p-2 rounded-lg text-red-400 hover:text-red-300 hover:bg-red-400/10 transition-all"
+                                            title="Delete meeting"
+                                        >
+                                            <Trash2 className="w-5 h-5" />
+                                        </button>
                                     </div>
                                 </Card>
                             );

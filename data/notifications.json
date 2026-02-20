@@ -1,0 +1,98 @@
+[
+  {
+    "id": "notif-1771537719568-2obd3p",
+    "userId": "user-1771517117874",
+    "type": "assignment",
+    "title": "New candidates assigned to you",
+    "message": "The following candidates have been assigned to your account: anjan theeng",
+    "icon": "user-check",
+    "color": "emerald",
+    "link": "/dashboard",
+    "read": true,
+    "createdAt": "2026-02-19T21:48:39.568Z"
+  },
+  {
+    "id": "notif-1771537724635-zrd0i3",
+    "userId": "user-1771517117874",
+    "type": "assignment",
+    "title": "New candidates assigned to you",
+    "message": "The following candidates have been assigned to your account: anjan theeng",
+    "icon": "user-check",
+    "color": "emerald",
+    "link": "/dashboard",
+    "read": true,
+    "createdAt": "2026-02-19T21:48:44.635Z"
+  },
+  {
+    "id": "notif-1771592569071-ykr490",
+    "userId": "user-3",
+    "type": "assignment",
+    "title": "New candidates assigned to you",
+    "message": "The following candidates have been assigned to your account: anjan theeng",
+    "icon": "user-check",
+    "color": "emerald",
+    "link": "/dashboard",
+    "read": true,
+    "createdAt": "2026-02-20T13:02:49.071Z"
+  },
+  {
+    "id": "notif-1771593075634-66kw7u",
+    "userId": "user-1",
+    "type": "meeting",
+    "title": "New meeting scheduled",
+    "message": "A meeting with anjan theeng has been scheduled on 2/20/2026 at 10:00 AM.",
+    "icon": "calendar",
+    "color": "blue",
+    "link": "/meetings",
+    "read": true,
+    "createdAt": "2026-02-20T13:11:15.634Z"
+  },
+  {
+    "id": "notif-1771593075636-4h76v8",
+    "userId": "user-1771517117874",
+    "type": "meeting",
+    "title": "You have been added to a meeting",
+    "message": "A meeting with anjan theeng (client: Admin User) is scheduled on 2/20/2026 at 10:00 AM.",
+    "icon": "calendar",
+    "color": "blue",
+    "link": "/meetings",
+    "read": true,
+    "createdAt": "2026-02-20T13:11:15.636Z"
+  },
+  {
+    "id": "notif-1771595095073-xwhsuo",
+    "userId": "user-3",
+    "type": "assignment",
+    "title": "New candidates assigned to you",
+    "message": "The following candidates have been assigned to your account: anjan theeng",
+    "icon": "user-check",
+    "color": "emerald",
+    "link": "/dashboard",
+    "read": true,
+    "createdAt": "2026-02-20T13:44:55.073Z"
+  },
+  {
+    "id": "notif-1771595385573-dftcyy",
+    "userId": "user-3",
+    "type": "assignment",
+    "title": "New candidates assigned to you",
+    "message": "The following candidates have been assigned to your account: anjan theeng, Gagan Rana",
+    "icon": "user-check",
+    "color": "emerald",
+    "link": "/dashboard",
+    "read": true,
+    "createdAt": "2026-02-20T13:49:45.573Z"
+  },
+  {
+    "id": "notif-1771595391460-4h661b",
+    "userId": "user-3",
+    "type": "assignment",
+    "title": "New candidates assigned to you",
+    "message": "The following candidates have been assigned to your account: anjan theeng, Gagan Rana",
+    "icon": "user-check",
+    "color": "emerald",
+    "link": "/dashboard",
+    "read": true,
+    "createdAt": "2026-02-20T13:49:51.460Z"
+  }
+]

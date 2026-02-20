@@ -1,14 +1,30 @@
 export type UserRole = 'admin' | 'customer_service' | 'client';
 
+export interface UserActivity {
+    id: string;
+    type: 'login' | 'time_log';
+    action: string;
+    timestamp: string;
+    duration?: string;
+    timeRange?: string;
+    status?: 'working' | 'away';
+}
+
 export interface User {
     id: string;
     email: string;
     name: string;
     role: UserRole;
+    avatarUrl?: string;
+    jobTitle?: string;
+    bio?: string;
+    department?: string;
+    employmentType?: string;
+    memberSince?: string;
     // Client Questionnaire Fields
-    hiringNeeds?: string; // What help they need most
-    targetEmployee?: string; // What kind of employee they look for
-    softwareStack?: string; // What software they use
+    hiringNeeds?: string;
+    targetEmployee?: string;
+    softwareStack?: string;
 }
 
 export interface Candidate {

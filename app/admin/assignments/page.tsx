@@ -226,7 +226,7 @@ export default function AssignCandidatesPage() {
                                 }`}
                         >
                             {saved ? <Check className="w-4 h-4" /> : null}
-                            {saving ? 'Saving...' : saved ? 'Saved!' : 'Save Assignment'}
+                            {saving ? 'Saving...' : saved ? 'Saved!' : 'Save Assigned'}
                         </Button>
                     )}
                 </div>

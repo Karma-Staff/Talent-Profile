@@ -186,6 +186,7 @@ export function CandidateForm({ initialData, mode }: CandidateFormProps) {
                 resumeUrl,
                 hiringCompanyLogo,
                 recordingUrl,
+                experience: formData.experience || 0,
                 skills: skillsInput
                     .split(',')
                     .map(s => s.trim())
@@ -204,6 +205,8 @@ export function CandidateForm({ initialData, mode }: CandidateFormProps) {
 
             if (!res.ok) throw new Error('Failed to save candidate');
 
+            const savedCandidate = await res.json();
+
             // Log the action
             const sessionRes = await fetch('/api/auth/session');
             const session = await sessionRes.json();
@@ -217,8 +220,8 @@ export function CandidateForm({ initialData, mode }: CandidateFormProps) {
                         userId: user.id,
                         action: mode === 'create' ? 'create_candidate' : 'update_candidate',
                         resourceType: 'candidate',
-                        resourceId: candidateData.id,
-                        details: { name: candidateData.name }
+                        resourceId: savedCandidate.id,
+                        details: { name: savedCandidate.name }
                     }),
                 });
             }

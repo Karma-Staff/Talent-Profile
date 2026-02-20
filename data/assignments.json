@@ -2,40 +2,10 @@
   {
     "clientId": "user-3",
     "candidateIds": [
-      "cand-3",
-      "cand-1770985320632",
-      "cand-4",
-      "cand-5",
-      "cand-6",
-      "cand-7",
-      "cand-8"
-    ],
-    "updatedAt": "2026-02-16T19:04:34.799Z",
-    "updatedBy": "user-1"
-  },
-  {
-    "clientId": "user-1771197344333",
-    "candidateIds": [
+      "cand-1771535550490",
       "cand-1770985320632"
     ],
-    "updatedAt": "2026-02-16T19:06:38.783Z",
-    "updatedBy": "user-1"
-  },
-  {
-    "clientId": "user-1771201683235",
-    "candidateIds": [
-      "cand-1770985559383",
-      "cand-1770954346937",
-      "cand-2",
-      "cand-1770985320632"
-    ],
-    "updatedAt": "2026-02-16T22:19:09.787Z",
-    "updatedBy": "user-1"
-  },
-  {
-    "clientId": "user-1771268194778",
-    "candidateIds": [],
-    "updatedAt": "2026-02-19T15:33:27.805Z",
+    "updatedAt": "2026-02-20T13:49:51.311Z",
     "updatedBy": "user-1"
   }
 ]

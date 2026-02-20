@@ -1929,5 +1929,325 @@
     "details": {
       "name": "Gagan Rana"
     }
+  },
+  {
+    "id": "1771531450711-7vsc1smzr",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1770985320632",
+    "timestamp": "2026-02-19T20:04:10.711Z",
+    "details": {
+      "candidateName": "Gagan Rana"
+    }
+  },
+  {
+    "id": "1771534408573-4qtk1wd6w",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1770985320632",
+    "timestamp": "2026-02-19T20:53:28.573Z",
+    "details": {
+      "candidateName": "Gagan Rana"
+    }
+  },
+  {
+    "id": "1771534437004-59b9r18hm",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1770985320632",
+    "timestamp": "2026-02-19T20:53:57.004Z",
+    "details": {
+      "candidateName": "Gagan Rana"
+    }
+  },
+  {
+    "id": "1771534804734-glfkjyy6x",
+    "userId": "user-1",
+    "action": "create_candidate",
+    "resourceType": "candidate",
+    "timestamp": "2026-02-19T21:00:04.734Z",
+    "details": {
+      "name": "anjan theeng"
+    }
+  },
+  {
+    "id": "1771535030517-9gj3kt258",
+    "userId": "user-1",
+    "action": "create_candidate",
+    "resourceType": "candidate",
+    "timestamp": "2026-02-19T21:03:50.517Z",
+    "details": {
+      "name": "anjan theeng"
+    }
+  },
+  {
+    "id": "1771535552025-85g798lxa",
+    "userId": "user-1",
+    "action": "create_candidate",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771535550490",
+    "timestamp": "2026-02-19T21:12:32.025Z",
+    "details": {
+      "name": "anjan theeng"
+    }
+  },
+  {
+    "id": "1771535563840-d0f51bneh",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771535550490",
+    "timestamp": "2026-02-19T21:12:43.840Z",
+    "details": {
+      "candidateName": "anjan theeng"
+    }
+  },
+  {
+    "id": "1771535577355-e95l17qnl",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771535550490",
+    "timestamp": "2026-02-19T21:12:57.355Z",
+    "details": {
+      "candidateName": "anjan theeng"
+    }
+  },
+  {
+    "id": "1771535609635-miniedafz",
+    "userId": "user-1",
+    "action": "schedule_meeting",
+    "resourceType": "meeting",
+    "resourceId": "meeting-1771535609595",
+    "timestamp": "2026-02-19T21:13:29.635Z",
+    "details": {
+      "candidateId": "cand-1771535550490",
+      "candidateName": "anjan theeng",
+      "scheduledDate": "2026-02-20",
+      "scheduledTime": "10:00 AM",
+      "meetingType": "standard",
+      "participants": [],
+      "notes": "test"
+    }
+  },
+  {
+    "id": "1771535634726-5wy7p8cw8",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771535550490",
+    "timestamp": "2026-02-19T21:13:54.726Z",
+    "details": {
+      "candidateName": "anjan theeng"
+    }
+  },
+  {
+    "id": "1771536257102-h8a1rmh7j",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771535550490",
+    "timestamp": "2026-02-19T21:24:17.102Z",
+    "details": {
+      "candidateName": "anjan theeng"
+    }
+  },
+  {
+    "id": "1771537423850-pd8kh1baq",
+    "userId": "user-1771517117874",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771505931794",
+    "timestamp": "2026-02-19T21:43:43.850Z",
+    "details": {
+      "candidateName": "Pulkit Parvinda"
+    }
+  },
+  {
+    "id": "1771537432149-czvd2htsv",
+    "userId": "user-1771517117874",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-3",
+    "timestamp": "2026-02-19T21:43:52.149Z",
+    "details": {
+      "candidateName": "Anudeep Nautiyal"
+    }
+  },
+  {
+    "id": "1771537463806-pwwm05wb6",
+    "userId": "user-1771517117874",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1770985320632",
+    "timestamp": "2026-02-19T21:44:23.806Z",
+    "details": {
+      "candidateName": "Gagan Rana"
+    }
+  },
+  {
+    "id": "1771590891322-grcfe5yc1",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771535550490",
+    "timestamp": "2026-02-20T12:34:51.322Z",
+    "details": {
+      "candidateName": "anjan theeng"
+    }
+  },
+  {
+    "id": "1771591605416-6oqjbzxyb",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771535550490",
+    "timestamp": "2026-02-20T12:46:45.416Z",
+    "details": {
+      "candidateName": "anjan theeng"
+    }
+  },
+  {
+    "id": "1771593039103-gp94wdrqs",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771535550490",
+    "timestamp": "2026-02-20T13:10:39.103Z",
+    "details": {
+      "candidateName": "anjan theeng"
+    }
+  },
+  {
+    "id": "1771593075680-36lj4z6ib",
+    "userId": "user-1",
+    "action": "schedule_meeting",
+    "resourceType": "meeting",
+    "resourceId": "meeting-1771593075643",
+    "timestamp": "2026-02-20T13:11:15.680Z",
+    "details": {
+      "candidateId": "cand-1771535550490",
+      "candidateName": "anjan theeng",
+      "scheduledDate": "2026-02-20",
+      "scheduledTime": "10:00 AM",
+      "meetingType": "standard",
+      "participants": [
+        "user-1771517117874"
+      ],
+      "notes": "dd"
+    }
+  },
+  {
+    "id": "1771593095972-5qooa48yz",
+    "userId": "user-1",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771535550490",
+    "timestamp": "2026-02-20T13:11:35.972Z",
+    "details": {
+      "candidateName": "anjan theeng"
+    }
+  },
+  {
+    "id": "1771593193371-tp0gcayak",
+    "userId": "user-3",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-3",
+    "timestamp": "2026-02-20T13:13:13.371Z",
+    "details": {
+      "candidateName": "Anudeep Nautiyal"
+    }
+  },
+  {
+    "id": "1771593296589-h2jg2pjh7",
+    "userId": "user-3",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-3",
+    "timestamp": "2026-02-20T13:14:56.589Z",
+    "details": {
+      "candidateName": "Anudeep Nautiyal"
+    }
+  },
+  {
+    "id": "1771593313356-pt94anuwo",
+    "userId": "user-3",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-3",
+    "timestamp": "2026-02-20T13:15:13.356Z",
+    "details": {
+      "candidateName": "Anudeep Nautiyal"
+    }
+  },
+  {
+    "id": "1771593402039-7fza6kwqo",
+    "userId": "user-3",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-3",
+    "timestamp": "2026-02-20T13:16:42.039Z",
+    "details": {
+      "candidateName": "Anudeep Nautiyal"
+    }
+  },
+  {
+    "id": "1771593689520-txjuxpg91",
+    "userId": "user-3",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-3",
+    "timestamp": "2026-02-20T13:21:29.520Z",
+    "details": {
+      "candidateName": "Anudeep Nautiyal"
+    }
+  },
+  {
+    "id": "1771595465172-tadrcpi85",
+    "userId": "user-3",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1771535550490",
+    "timestamp": "2026-02-20T13:51:05.172Z",
+    "details": {
+      "candidateName": "anjan theeng"
+    }
+  },
+  {
+    "id": "1771595471704-rxxf8iog6",
+    "userId": "user-3",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1770985320632",
+    "timestamp": "2026-02-20T13:51:11.704Z",
+    "details": {
+      "candidateName": "Gagan Rana"
+    }
+  },
+  {
+    "id": "1771595539811-v3wxvd71d",
+    "userId": "user-3",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1770985320632",
+    "timestamp": "2026-02-20T13:52:19.811Z",
+    "details": {
+      "candidateName": "Gagan Rana"
+    }
+  },
+  {
+    "id": "1771595820703-3gnovg4m7",
+    "userId": "user-3",
+    "action": "view_profile",
+    "resourceType": "candidate",
+    "resourceId": "cand-1770985320632",
+    "timestamp": "2026-02-20T13:57:00.703Z",
+    "details": {
+      "candidateName": "Gagan Rana"
+    }
   }
 ]

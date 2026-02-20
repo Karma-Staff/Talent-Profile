@@ -26,6 +26,7 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json(newCandidate, { status: 201 });
     } catch (error) {
+        console.error('Candidate POST error:', error);
         return NextResponse.json({ error: 'Failed to create candidate' }, { status: 500 });
     }
 }

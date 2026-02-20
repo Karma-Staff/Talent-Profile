@@ -1,0 +1,196 @@
+{
+  "candidates": [
+    {
+      "name": "anjan theeng",
+      "email": "anjan.lamatamang@gmail.com",
+      "phone": "9860749490",
+      "title": "AI",
+      "experience": 1,
+      "skills": [
+        "Customer relationship",
+        "Marketing",
+        "Revenue Management"
+      ],
+      "bio": "abc",
+      "location": "Noida, India",
+      "availability": "immediate",
+      "joiningDate": "",
+      "resumeUrl": "",
+      "hiringCompanyLogo": "",
+      "hobbies": [
+        "TENNIS"
+      ],
+      "imageUrl": "/uploads/Image (13)-1771535549865-14945050.jpg",
+      "id": "cand-1771535550490",
+      "sortOrder": 1
+    },
+    {
+      "id": "cand-3",
+      "name": "Anudeep Nautiyal",
+      "email": "service@karmastaff.com",
+      "phone": "571-470-0093",
+      "title": "Restoration Office Admin",
+      "experience": 3,
+      "skills": [
+        "Attention to detail",
+        "Analytical thinking",
+        "Problem-solving"
+      ],
+      "bio": "* Delivered customer satisfaction scores consistently above 80 while supporting a US-based financial process.\n* Promoted to Claims Specialist for exceptional performance in handling complex and high-priority cases.\n* Reduced customer service resolution time by 30% and claims processing time by 20%.\n* Utilized Quantum software and CRM tools to streamline workflows and improve claims accuracy.",
+      "resumeUrl": "/uploads/Anudeep Resume 1-1770953644776-241894701.pdf",
+      "location": "Dehradun, India",
+      "availability": "immediate",
+      "imageUrl": "/uploads/Anudeep Nautiyal-1770949774102-219428566.png",
+      "sortOrder": 2
+    },
+    {
+      "id": "cand-1770985320632",
+      "name": "Gagan Rana",
+      "email": "service@karmastaff.com",
+      "phone": "571-470-0093",
+      "title": "Office Admin",
+      "experience": 10,
+      "skills": [
+        "Customer relationship",
+        "Marketing",
+        "Revenue Management"
+      ],
+      "bio": "A result oriented professional with (5+) Five plus Years of total experience in multi-disciplinary areas requiring diversified skills. Last associated with Allianz as Team Lead in Customer Relations department.",
+      "resumeUrl": "/uploads/ResumeGAGANRANA-1771029299260-353743430.pdf",
+      "location": "Noida, India",
+      "availability": "immediate",
+      "imageUrl": "/uploads/Gagan'sPP-1770985320033-283725498.jpg",
+      "sortOrder": 0
+    },
+    {
+      "id": "cand-1771505343600",
+      "name": "Manya Arora",
+      "email": "service@karmastaff.com",
+      "phone": "571-470-0093",
+      "title": "Admin",
+      "experience": 3,
+      "skills": [
+        "Comm"
+      ],
+      "bio": "Experienced in handling inbound calls( US Process), resolving customer issues, and maintaining professionalism across service-focused roles. Strong ability to manage complex customer complaints with empathy and effective communication.",
+      "resumeUrl": "/uploads/Manya Resume 1-1771505342987-480104506.pdf",
+      "location": "Dehradun, India",
+      "availability": "immediate",
+      "imageUrl": "/uploads/Manya Arora-1771505342946-75460678.jpeg",
+      "sortOrder": 3
+    },
+    {
+      "id": "cand-1771505472931",
+      "name": "Aman Vijetra",
+      "email": "service@karmastaff.com",
+      "phone": "571-470-0093",
+      "title": "Admin",
+      "experience": 0,
+      "skills": [
+        "Customer Service",
+        "Time Management",
+        "Teamwork"
+      ],
+      "bio": "Handles international customer interactions professionally through voice support at I Energizer (US Based process). Efficiently resolves customer queries while ensuring high quality standards and process adherence.",
+      "resumeUrl": "/uploads/Aman Resume 1-1771505472899-626895746.pdf",
+      "location": "Dehradun, India",
+      "availability": "immediate",
+      "imageUrl": "/uploads/Aman Vijetra-1771505472866-260769084.jpeg",
+      "sortOrder": 4
+    },
+    {
+      "id": "cand-1771505800747",
+      "name": "Anshul Uppal",
+      "email": "service@karmastaff.com",
+      "phone": "571-470-0093",
+      "title": "Admin",
+      "experience": 0,
+      "skills": [
+        "Procurement",
+        "Supply Chain",
+        "Vendor Negotiations"
+      ],
+      "bio": "Procurement & Supply Chain Specialist with strong experience in construction purchasing, vendor negotiations, inventory forecasting, and hospital supply operations.",
+      "imageUrl": "/uploads/Anshul'sPP-1771505800591-323252188.jpg",
+      "location": "Noida, India",
+      "availability": "immediate",
+      "sortOrder": 5
+    },
+    {
+      "id": "cand-1771505931794",
+      "name": "Pulkit Parvinda",
+      "email": "service@karmastaff.com",
+      "phone": "571-470-0093",
+      "title": "Admin",
+      "experience": 4,
+      "skills": [
+        "Xactimate",
+        "CRM",
+        "Job Management"
+      ],
+      "bio": "Estimating software: proficient in Xactimate - sketching floor plans, applying line items, and generating detailed estimates.",
+      "resumeUrl": "/uploads/Pulkit Resume-1771505931767-991779960.pdf",
+      "location": "Dehradun, India",
+      "availability": "two_weeks",
+      "imageUrl": "/uploads/Pulkit-1771505931736-843690631.jpeg",
+      "sortOrder": 6
+    }
+  ],
+  "meetings": [
+    {
+      "id": "meet-1771535608167",
+      "candidateId": "cand-1771535550490",
+      "clientId": "user-1",
+      "scheduledAt": "2026-02-20T04:15:00.000Z",
+      "status": "scheduled",
+      "notes": "test",
+      "createdAt": "2026-02-19T21:13:28.167Z",
+      "updatedAt": "2026-02-19T21:13:28.167Z",
+      "meetingType": "standard",
+      "participants": []
+    },
+    {
+      "id": "meet-1771593073582",
+      "candidateId": "cand-1771535550490",
+      "clientId": "user-1",
+      "scheduledAt": "2026-02-20T04:15:00.000Z",
+      "status": "scheduled",
+      "notes": "dd",
+      "createdAt": "2026-02-20T13:11:13.582Z",
+      "updatedAt": "2026-02-20T13:11:13.582Z",
+      "meetingType": "standard",
+      "participants": [
+        "user-1771517117874"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "user-1771517117874",
+      "name": "anjan theeng",
+      "email": "anjan@karmastaff.com",
+      "role": "client",
+      "avatarUrl": "https://lh3.googleusercontent.com/a/ACg8ocL8_Q3yGvH6_H3_g6h_f_x_x_x_x_x_x_x=s96-c",
+      "jobTitle": "Learner",
+      "department": "Marketing",
+      "employmentType": "Full Time Employee",
+      "memberSince": "2026-02-13",
+      "bio": "A short description about yourself",
+      "hiringNeeds": "",
+      "targetEmployee": "",
+      "softwareStack": ""
+    },
+    {
+      "id": "user-3",
+      "email": "client1@gmail.com",
+      "name": "Mike Anderson",
+      "role": "client",
+      "avatarUrl": "https://i.pravatar.cc/150?u=mike",
+      "jobTitle": "Proprietor",
+      "department": "Management",
+      "memberSince": "2024-03-10",
+      "bio": "",
+      "employmentType": "Full Time Employee"
+    }
+  ]
+}

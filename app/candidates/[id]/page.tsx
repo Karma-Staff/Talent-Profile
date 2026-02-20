@@ -47,15 +47,32 @@ export default function CandidateProfilePage() {
         if (params?.id) {
             fetch('/api/candidates')
                 .then(res => res.json())
-                .then(data => {
+                .then(async (data) => {
                     const found = data.find((c: any) => c.id === params.id);
-                    if (found) setCandidate(found);
-                    else notFound();
+                    if (!found) { notFound(); return; }
+
+                    // If user is a client, verify the candidate is assigned to them
+                    if (user?.role === 'client' && user?.id) {
+                        try {
+                            const assignRes = await fetch(`/api/assignments?clientId=${user.id}`);
+                            const assignment = await assignRes.json();
+                            if (!assignment?.candidateIds?.includes(params.id as string)) {
+                                router.push('/dashboard');
+                                return;
+                            }
+                        } catch (err) {
+                            console.error('Assignment check failed:', err);
+                            router.push('/dashboard');
+                            return;
+                        }
+                    }
+
+                    setCandidate(found);
                 })
                 .catch(err => console.error(err))
                 .finally(() => setLoading(false));
         }
-    }, [params]);
+    }, [params, user?.role, user?.id]);
 
     // Log profile view
     useEffect(() => {
@@ -240,37 +257,58 @@ export default function CandidateProfilePage() {
                         </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-3 border-t border-border pt-4">
+                    <div className="flex flex-wrap items-center gap-3 border-t border-border pt-5">
+                        {/* Primary Actions */}
                         {canSchedule && (
-                            <Button onClick={handleScheduleMeeting}>
+                            <Button
+                                onClick={handleScheduleMeeting}
+                                className={user?.role === 'client'
+                                    ? 'bg-green-600 hover:bg-green-700 text-white shadow-md shadow-green-600/20 transition-all hover:shadow-lg hover:shadow-green-600/30 hover:-translate-y-0.5'
+                                    : 'bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20 transition-all hover:shadow-lg hover:shadow-blue-600/30 hover:-translate-y-0.5'}
+                            >
                                 <Calendar className="w-4 h-4 mr-2" />
-                                Schedule Meeting
+                                {user?.role === 'client' ? 'Book Appointment' : 'Schedule Meeting'}
                             </Button>
                         )}
                         {showPII && (
-                            <Button variant="secondary" onClick={handleDownloadResume}>
-                                <Download className="w-4 h-4 mr-2" />
+                            <Button
+                                variant="outline"
+                                onClick={handleDownloadResume}
+                                className="border-slate-600 hover:bg-slate-700/50 hover:border-slate-500 transition-all hover:-translate-y-0.5"
+                            >
+                                <Download className="w-4 h-4 mr-2 text-sky-400" />
                                 Download Profile
                             </Button>
                         )}
                         {candidate.resumeUrl && (
-                            <Button variant="outline" onClick={() => setShowResumePreview(true)}>
-                                <FileText className="w-4 h-4 mr-2" />
+                            <Button
+                                variant="outline"
+                                onClick={() => setShowResumePreview(true)}
+                                className="border-slate-600 hover:bg-slate-700/50 hover:border-slate-500 transition-all hover:-translate-y-0.5"
+                            >
+                                <FileText className="w-4 h-4 mr-2 text-amber-400" />
                                 View Resume
                             </Button>
                         )}
+
                         {canEdit && (
                             <>
-                                <Button variant="outline" onClick={() => router.push(`/candidates/${candidate.id}/edit`)}>
-                                    <Edit className="w-4 h-4 mr-2" />
+                                {/* Separator */}
+                                <div className="hidden sm:block w-px h-8 bg-border mx-1" />
+
+                                <Button
+                                    variant="outline"
+                                    onClick={() => router.push(`/candidates/${candidate.id}/edit`)}
+                                    className="border-slate-600 hover:bg-slate-700/50 hover:border-slate-500 transition-all hover:-translate-y-0.5"
+                                >
+                                    <Edit className="w-4 h-4 mr-2 text-violet-400" />
                                     Edit Profile
                                 </Button>
                                 <Button
                                     variant="outline"
-                                    className="text-red-500 hover:text-red-600 border-red-200 hover:bg-red-50"
+                                    className="border-red-500/30 text-red-400 hover:bg-red-500/10 hover:border-red-500/50 transition-all hover:-translate-y-0.5"
                                     onClick={async () => {
-                                        if (confirm('Are you sure you want to delete this candidate?')) {
-                                            // Log the deletion
+                                        if (confirm('Are you sure you want to delete this candidate? This action cannot be undone.')) {
                                             await logAudit(
                                                 user.id,
                                                 'delete_candidate',
@@ -290,10 +328,9 @@ export default function CandidateProfilePage() {
                                 </Button>
                                 {candidate.availability !== 'hired' && (
                                     <Button
-                                        className="bg-green-600 hover:bg-green-700 text-white"
+                                        className="bg-emerald-600 hover:bg-emerald-700 text-white shadow-md shadow-emerald-600/20 transition-all hover:shadow-lg hover:shadow-emerald-600/30 hover:-translate-y-0.5 ml-auto"
                                         onClick={async () => {
-                                            if (confirm('Mark this candidate as HIRED?')) {
-                                                // Log the action
+                                            if (confirm('Mark this candidate as HIRED? This will update their status.')) {
                                                 await logAudit(
                                                     user.id,
                                                     'update_candidate',

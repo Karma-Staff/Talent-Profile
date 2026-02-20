@@ -1,92 +1,22 @@
 [
   {
     "id": "meet-1",
-    "candidateId": "cand-1",
+    "candidateId": "cand-3",
     "clientId": "user-3",
     "scheduledAt": "2026-02-15T15:00:00.000Z",
     "status": "scheduled",
-    "notes": "Initial interview for water damage position",
+    "notes": "Initial interview for restoration office admin position",
     "createdAt": "2026-02-10T19:30:00.000Z",
     "updatedAt": "2026-02-10T19:30:00.000Z"
   },
   {
     "id": "meet-2",
-    "candidateId": "cand-3",
+    "candidateId": "cand-1771505343600",
     "clientId": "user-3",
     "scheduledAt": "2026-02-16T19:00:00.000Z",
     "status": "scheduled",
-    "notes": "Discussion about mold remediation projects",
+    "notes": "Discussion about admin role",
     "createdAt": "2026-02-11T14:15:00.000Z",
     "updatedAt": "2026-02-11T14:15:00.000Z"
-  },
-  {
-    "id": "meet-1770984841292",
-    "candidateId": "cand-1770954346937",
-    "clientId": "user-1",
-    "scheduledAt": "2026-02-26T20:00:00.000Z",
-    "status": "scheduled",
-    "notes": "hey ,  testing for interview ",
-    "createdAt": "2026-02-13T12:14:01.292Z",
-    "updatedAt": "2026-02-13T12:14:01.292Z"
-  },
-  {
-    "id": "meet-1771268004930",
-    "candidateId": "cand-1770985320632",
-    "clientId": "user-1",
-    "scheduledAt": "2026-02-18T16:00:00.000Z",
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": "2026-02-16T18:53:24.930Z",
-    "updatedAt": "2026-02-16T18:53:24.930Z"
-  },
-  {
-    "id": "meet-1771269374304",
-    "candidateId": "cand-1770985320632",
-    "clientId": "user-1",
-    "scheduledAt": "2026-02-16T19:00:00.000Z",
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": "2026-02-16T19:16:14.304Z",
-    "updatedAt": "2026-02-16T19:16:14.304Z"
-  },
-  {
-    "id": "meet-1771419172109",
-    "candidateId": "cand-1770985320632",
-    "clientId": "user-1",
-    "scheduledAt": "2026-02-19T15:00:00.000Z",
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": "2026-02-18T12:52:52.109Z",
-    "updatedAt": "2026-02-18T12:52:52.109Z"
-  },
-  {
-    "id": "meet-1771420345649",
-    "candidateId": "cand-3",
-    "clientId": "user-3",
-    "scheduledAt": "2026-02-19T14:00:00.000Z",
-    "status": "scheduled",
-    "notes": "",
-    "createdAt": "2026-02-18T13:12:25.649Z",
-    "updatedAt": "2026-02-18T13:12:25.649Z"
-  },
-  {
-    "id": "meet-1771514733228",
-    "candidateId": "cand-3",
-    "clientId": "user-1",
-    "scheduledAt": "2026-02-19T04:15:00.000Z",
-    "status": "scheduled",
-    "notes": "Test: to admin user",
-    "createdAt": "2026-02-19T15:25:33.228Z",
-    "updatedAt": "2026-02-19T15:25:33.228Z"
-  },
-  {
-    "id": "meet-1771517375053",
-    "candidateId": "cand-1770985320632",
-    "clientId": "user-1",
-    "scheduledAt": "2026-02-19T04:15:00.000Z",
-    "status": "scheduled",
-    "notes": "test",
-    "createdAt": "2026-02-19T16:09:35.054Z",
-    "updatedAt": "2026-02-19T16:09:35.054Z"
   }
 ]
