@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "postinstall": "npx prisma generate"
+    "postinstall": "npx prisma generate",
+    "seed": "node prisma/seed.js"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
