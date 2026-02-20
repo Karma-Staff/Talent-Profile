@@ -9,8 +9,10 @@ try {
 
   if (dbUrl && (dbUrl.startsWith('prisma+postgres') || dbUrl.startsWith('postgres'))) {
     // Standard initialization with adapter
+    const cleanDbUrl = dbUrl.replace(/^prisma\+postgres(ql)?:\/\//, 'postgres://');
+
     const pool = new Pool({
-      connectionString: dbUrl,
+      connectionString: cleanDbUrl,
       ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
     });
     const adapter = new PrismaPg(pool);
