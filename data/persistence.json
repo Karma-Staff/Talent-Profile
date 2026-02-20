@@ -191,15 +191,6 @@
       "memberSince": "2024-03-10",
       "bio": "",
       "employmentType": "Full Time Employee"
-    },
-    {
-      "id": "user-1771597674854",
-      "name": "pema kunga",
-      "email": "pema@karmastaff.com",
-      "role": "client",
-      "hiringNeeds": "IT",
-      "targetEmployee": "IT",
-      "softwareStack": "IT"
     }
   ]
 }
