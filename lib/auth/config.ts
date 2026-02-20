@@ -11,20 +11,32 @@ export const authOptions: NextAuthOptions = {
                 password: { label: 'Password', type: 'password' },
             },
             async authorize(credentials) {
+                console.log('Login attempt for email:', credentials?.email);
+
                 if (!credentials?.email || !credentials?.password) {
+                    console.log('Missing email or password in request.');
                     return null;
                 }
 
                 // In production, verify against a secure database with hashed passwords
-                const user = await db.getUserByEmail(credentials.email);
+                try {
+                    console.log('Fetching user from DB:', credentials.email);
+                    const user = await db.getUserByEmail(credentials.email);
+                    console.log('DB Request returned user:', user ? `Found (Role: ${user.role})` : 'Not Found');
 
-                if (user && credentials.password === 'demo123') {
-                    return {
-                        id: user.id,
-                        email: user.email,
-                        name: user.name,
-                        role: user.role,
-                    };
+                    if (user && credentials.password === 'demo123') {
+                        console.log('Password matched demo123, returning successful session.');
+                        return {
+                            id: user.id,
+                            email: user.email,
+                            name: user.name,
+                            role: user.role,
+                        };
+                    } else if (user) {
+                        console.log('Password did not match demo123!');
+                    }
+                } catch (err) {
+                    console.error('Database connection error during login:', err);
                 }
 
                 return null;
